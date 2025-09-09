@@ -1,0 +1,76 @@
+[
+  {
+    "id": "grotte-tautavel",
+    "title": "Grotte de Tautavel",
+    "description": "Application de recherche destinée aux archéologues et chercheurs : elle permet d'afficher de manière symbolique, dans un environnement virtuel de la grotte de Tautavel, l'ensemble des objets découverts. Chaque artefact est positionné à son emplacement exact, avec l'orientation correcte, à partir de la base de données scientifique.",
+    "media": [
+      { "type": "video", "src": "https://player.vimeo.com/video/558944507?badge=0&autopause=0&player_id=0&app_id=58479" }
+    ],
+    "keywords": ["Unity 3D", "VR", "Archéologie", "Recherche scientifique", "Base de données"],
+    "date": "2021-08-10",
+    "madeWith": ["Unity 3D"],
+    "madeFor": "Centre Européen de Recherches Préhistoriques de Tautavel"
+  },
+  {
+    "id": "vallee-tautavel",
+    "title": "Vallée de Tautavel",
+    "description": "Exploration virtuelle de la vallée de Tautavel réalisée en réalité virtuelle et enrichie d'intelligence artificielle. Cette expérience offre une immersion dans les paysages préhistoriques et les modes de vie des premiers habitants.",
+    "media": [
+      { "type": "video", "src": "https://player.vimeo.com/video/559033473?h=964d54f9ff" }
+    ],
+    "keywords": ["Unity 3D", "VR", "Archéologie", "Patrimoine", "IA"],
+    "date": "2021-08-10",
+    "madeWith": ["Unity 3D", "IA"],
+    "madeFor": "Centre Européen de Recherches Préhistoriques de Tautavel"
+  },
+  {
+    "id": "forklift",
+    "title": "Forklift Simulator",
+    "description": "Simulation immersive en réalité virtuelle réalisée lors d'un stage de Master 2.",
+    "media": [
+      { "type": "video", "src": "https://www.youtube.com/embed/s7vyqhVNORI" }
+    ],
+    "keywords": ["Unity 3D", "VR", "Simulation"],
+    "date": "2018-01-01",
+    "duration": "6 mois",
+    "madeWith": ["Unity 3D", "C#"],
+    "madeFor": "Virtuelis (Stage M2 MTI3D)"
+  },
+  {
+    "id": "airtight-house",
+    "title": "Airtight House",
+    "description": "Projet de réalité virtuelle autour de la simulation d'une maison étanche à l'air.",
+    "media": [
+      { "type": "video", "src": "https://www.youtube.com/embed/GACMeQUmnoQ" }
+    ],
+    "keywords": ["Unity 3D", "VR", "Architecture"],
+    "date": "2017-01-01",
+    "duration": "3 mois",
+    "madeWith": ["Unity 3D", "C#"],
+    "madeFor": "Groupe Loriot (Stage M1 MTI3D)"
+  },
+  {
+    "id": "vrception",
+    "title": "VRCeption",
+    "description": "Projet présenté au Laval Virtual Fantasy : expérience VR avec une limite de temps.",
+    "media": [
+      { "type": "video", "src": "https://www.youtube.com/embed/Yonky1GVPCs" }
+    ],
+    "keywords": ["Unity 3D", "VR", "Laval Virtual"],
+    "date": "2017-01-01",
+    "madeWith": ["Unity 3D", "C#"],
+    "madeFor": "Équipe Elio Kitteam (Master 1 MTI3D)"
+  },
+  {
+    "id": "vr-card-game",
+    "title": "VR Card Game",
+    "description": "Jeu de cartes en réalité virtuelle développé comme projet junior.",
+    "media": [
+      { "type": "video", "src": "https://www.youtube.com/embed/gYvYmLuTCdo" }
+    ],
+    "keywords": ["Unity 3D", "VR", "Game"],
+    "date": "2017-01-01",
+    "madeWith": ["Unity 3D", "C#"],
+    "madeFor": "Projet Junior (Master 1 MTI3D)"
+  }
+]

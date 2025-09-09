@@ -1,0 +1,18 @@
+<div class="h-auto w-full bg-secondary flex flex-row items-center justify-between p-12">
+  <div class="font-title text-primary text-4xl md:text-6xl">
+    David Gonçalves
+  </div>
+  <!-- Nav desktop / tablette -->
+  <nav class="hidden md:flex items-center gap-8 font-body text-xl text-primary">
+    @for (link of links; track link.path) {
+      <a
+        [routerLink]="link.path"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+        routerLinkActive="text-accent"
+        class="hover:text-accent transition-colors "
+      >
+        {{ link.label }}
+      </a>
+    }
+  </nav>
+</div>

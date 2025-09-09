@@ -1,0 +1,53 @@
+<div class="bg-secondary rounded-2xl shadow-md overflow-hidden flex flex-col h-full">
+  <!-- Media -->
+  <div class="w-full h-56 bg-primary relative overflow-hidden border border-2 border-b-0 rounded-t-2xl border-accent">
+    @for (media of project.media; track media.src; let  i = $index) {
+      @if (media.type === 'image' && i === 0) {
+        <img [src]="media.src"
+            [alt]="project.title"
+            class="w-full h-full object-cover" />
+      }
+      @if (media.type === 'video' && i === 0) {
+        <iframe [src]="media.src | safeUrl"
+            class="w-full h-full aspect-video object-cover"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+      }
+    }
+  </div>
+  <h3 class="font-title text-lg font-semibold text-accent border border-2 border-t-0 rounded-b-2xl border-accent bg-primary px-4 py-2">
+    {{ project.title }}
+  </h3>
+
+
+  <!-- Infos -->
+  <div class="p-4 flex flex-col gap-2 flex-1">
+    <p class="font-body text-sm text-primary flex-1">
+      {{ project.description }}
+    </p>
+
+    <div class="flex flex-wrap gap-2 mt-2">
+      @for (keyword of project.keywords; track keyword) {
+        <span class="px-2 py-1 rounded-full text-xs bg-primary text-secondary">
+          {{ keyword }}
+        </span>
+      }
+    </div>
+    <button mat-button class="mech-btn primary" (click)="toggleDetails()">
+      @if (!showDetails) { Plus de détails } @else { Moins de détails }
+    </button>
+
+    @if (showDetails) {
+      <div class="mt-3 text-xs text-primary space-y-1">
+        <p>Année : {{ project.date | date:'yyyy' }}</p>
+        @if (project.duration) {
+          <p>Durée : {{ project.duration }}</p>
+        }
+        <p>Fait avec : {{ project.madeWith.join(', ') }}</p>
+        <p>Fait pour : {{ project.madeFor }}</p>
+      </div>
+    }
+  </div>
+</div>

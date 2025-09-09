@@ -1,0 +1,75 @@
+/* 2e image - 2/3 visible (par défaut) */
+/*.clip-path-second {
+  clip-path: polygon(0 0, 100% 0, 40% 100%, 40% 100%, 0% 100%);
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.clip-path-second:hover {
+  clip-path: polygon(0 0, 100% 0,100% 50%, 70% 100%, 0% 100%);
+}
+
+.clip-path-first {
+  clip-path: polygon(0 0, 60% 0, 0% 100%, 0% 100%);
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.clip-path-first:hover {
+  clip-path: polygon(0 0, 90% 0, 30% 100%, 0% 100%);
+}*/
+
+.triple-slices {
+  /* positions horizontales (en %) des coupes rouge/verte */
+  --red: 35%;   /* coupe rouge en haut */
+  --green: 95%; /* coupe verte en haut */
+
+  /* écart en bas (même inclinaison => ajout d’un décalage constant) */
+  --slope-shift: -30%; /* négatif = coupe penchée vers la gauche en bas */
+
+  .clip-path-first,
+  .clip-path-second {
+    transition: clip-path 280ms ease;
+    will-change: clip-path;
+  }
+
+  /* img1 : de la gauche jusqu’à la coupe rouge */
+  .clip-path-first {
+    clip-path: polygon(
+      0 0,
+      var(--red) 0,
+      calc(var(--red) + var(--slope-shift)) 100%,
+      0 100%
+    );
+  }
+
+  /* img2 : entre coupe rouge et coupe verte */
+  .clip-path-second {
+    clip-path: polygon(
+      var(--red) 0,
+      var(--green) 0,
+      calc(var(--green) + var(--slope-shift)) 100%,
+      calc(var(--red) + var(--slope-shift)) 100%
+    );
+  }
+
+  /* IMG3 (fond) apparaît automatiquement derrière */
+
+  /* -------- Hover -------- */
+
+  /* A) Hover img1 → décaler les deux coupes vers la droite */
+  &:has(.clip-path-first:hover) {
+    --red: 80%;
+    --green: 110%;
+  }
+
+  /* B) Hover img2 → repousser les coupes vers l’extérieur */
+  &:has(.clip-path-second:hover) {
+    --red: 20%;
+    --green: 105%;
+  }
+
+  /* C) Hover img3 → rapprocher les coupes vers la gauche */
+  &:hover:not(:has(.clip-path-first:hover)):not(:has(.clip-path-second:hover)) {
+    --red: 25%;
+    --green: 40%;
+  }
+}

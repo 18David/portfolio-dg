@@ -1,0 +1,37 @@
+<div class="bg-secondary py-8 text-primary">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+
+    <!-- Logo / Titre -->
+    <div class="flex items-center gap-3">
+      <span class="font-title text-xl font-semibold">David Gonçalves</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex gap-6 font-body">
+      <a routerLink="/" class="hover:text-accent transition-colors">Accueil</a>
+      <a routerLink="/about" class="hover:text-accent transition-colors">À propos</a>
+      <a routerLink="/contact" class="hover:text-accent transition-colors">Contact</a>
+    </nav>
+
+    <!-- Réseaux sociaux -->
+    <div class="flex gap-4 text-lg">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-accent transition-colors">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:text-accent transition-colors">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="hover:text-accent transition-colors">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-accent transition-colors">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Ligne du bas -->
+  <div class="mt-6 border-t border-white/10 pt-4 text-center text-sm text-gray-400 font-body">
+    © {{ currentYear }} David Gonçalves - Tous droits réservés
+  </div>
+</div>
