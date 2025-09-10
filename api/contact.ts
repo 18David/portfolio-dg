@@ -37,21 +37,19 @@ module.exports = async function handler(req, res) {
       debug: true
     });
 
+    const fromAddr = SMTP_USER.includes('@') ? SMTP_USER : `${SMTP_USER}@free.fr`;
+
     const info = await transporter.sendMail({
-      from: SMTP_USER,
+      from: `"Portfolio DG" <${fromAddr}>`,         // Header From (aligné Free)
       to: CONTACT_TO,
-      replyTo: email,
+      replyTo: email,                               // le visiteur
+      sender: fromAddr,                             // Header Sender (optionnel)
+      envelope: { from: fromAddr, to: CONTACT_TO }, // MAIL FROM (Return-Path) = Free
       subject: `Nouveau message du portfolio — ${name}`,
       text: `De: ${name} <${email}>\n\n${message}`,
-      html: `
-        <p><strong>De :</strong> ${name} &lt;${email}&gt;</p>
-        <p>${String(message).replace(/\n/g, '<br>')}</p>
-      `
+      html: `<p><strong>De :</strong> ${name} &lt;${email}&gt;</p><p>${String(message).replace(/\n/g,'<br>')}</p>`
     });
 
-    console.log('SMTP response:', info.response);
-    console.log('Accepted:', info.accepted);
-    console.log('Rejected:', info.rejected);
 
     return res.status(200).json({ ok: true, id: info.messageId });
   } catch (e) {
