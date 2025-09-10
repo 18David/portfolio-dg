@@ -1,5 +1,46 @@
 [
   {
+    "id": "table-interactive-pedagogique",
+    "title": "Table interactive pédagogique — Valorisation des déchets plastiques",
+    "description": "Table interactive sous Unity conçue pour expliquer le processus de valorisation des déchets plastiques. Intégration de capteurs NFC (détection d’objets), Arduino Mega, mini-PC et éclairage LED pour orchestrer les interactions. Pièces mécaniques imprimées en 3D, circuits imprimés (PCB) sur mesure et structure fabriquée en découpe numérique pour un usage scolaire mêlant électronique et design interactif.",
+    "media": [
+      { "type": "image", "src": "/assets/projects/table1.jpg" },
+      { "type": "image", "src": "/assets/projects/table2.jpg" },
+      { "type": "image", "src": "/assets/projects/table3.jpg" }
+    ],
+    "keywords": [
+      "Unity 3D",
+      "Arduino",
+      "Impression 3D",
+      "PCB sur mesure",
+      "Découpe numérique"
+    ],
+    "date": "2024-01-01",
+    "madeWith": [
+      "Unity 3D",
+      "Arduino Mega",
+      "Capteurs NFC",
+      "Mini-PC",
+      "Éclairage LED",
+      "Impression 3D",
+      "PCB sur mesure",
+      "Découpe numérique (CNC)"
+    ],
+    "madeFor": "SUEZ — UVE Landemont (usage scolaire)"
+  },
+  {
+    "id": "explorations360",
+    "title": "Explorations360 — création et diffusion d'expériences 360°",
+    "description": "Plateforme en ligne pour composer et partager des visites 360° interactives sans code, avec un éditeur en glisser-déposer (textes, icônes, photos/vidéos, objets 3D, points GPS, sons), diffusables sur le web, smartphone/tablette et casques VR. Propose aussi une offre clé-en-main (captation 360, scénarisation, publication) et des packs incluant la mise à disposition de casques.",
+    "media": [
+      { "type": "video", "src": "https://www.youtube.com/embed/JPotbJPVPKw" }
+    ],
+    "keywords": ["Angular", "Three.js", "VR", "360°", "Visite virtuelle", "Plateforme", "Easystory360" ],
+    "date": "2023-01-01",
+    "madeWith": ["Explorations360 (plateforme)", "Easystory360 (CMS)", "Lecteur 360 web"],
+    "madeFor": "Tourisme & patrimoine, pédagogie & formation, industrie & savoir-faire, communication & RH"
+  },
+  {
     "id": "grotte-tautavel",
     "title": "Grotte de Tautavel",
     "description": "Application de recherche destinée aux archéologues et chercheurs : elle permet d'afficher de manière symbolique, dans un environnement virtuel de la grotte de Tautavel, l'ensemble des objets découverts. Chaque artefact est positionné à son emplacement exact, avec l'orientation correcte, à partir de la base de données scientifique.",
