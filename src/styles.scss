@@ -71,14 +71,30 @@
 
 /* Variante principale (fond secondary) */
 .mech-btn.secondary {
-  background-color: var(--mat-sys-secondary-container);
-  color: var(--mat-sys-primary)!important;
+  background-color: #ffffff;
+  color: var(--mat-sys-on-primary-fixed)!important;
 }
 
 /* Variante secondaire (fond tertiary) */
 .mech-btn.primary {
   background-color: var(--mat-sys-tertiary-container);
-  color: var(--mat-sys-primary)!important;
+  color: var(--mat-sys-on-primary-fixed)!important;
+}
+
+/* État "pressed" persistant */
+.mech-btn.pressed,
+.mech-btn[aria-pressed="true"] {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--mat-sys-primary);
+}
+
+/* Empêche le hover/clic de remonter le bouton */
+.mech-btn.pressed:hover,
+.mech-btn.pressed:active,
+.mech-btn[aria-pressed="true"]:hover,
+.mech-btn[aria-pressed="true"]:active {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 1px 1px 0 var(--mat-sys-primary) !important;
 }
 
 

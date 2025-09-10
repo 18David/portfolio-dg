@@ -6,29 +6,56 @@
   <!-- Filtres -->
   <div class="flex gap-4 font-body">
     <button (click)="setFilter(null)"
-            class="px-3 py-1 rounded-full text-l md:text-xl bg-secondary"
-            [class.bg-accent]="!filter"
-            [class.bg-secondary]="filter">
+            class="mech-btn primary"
+            [class.primary]="!filter"
+            [class.pressed]="!filter"
+            [class.secondary]="filter">
       Tous
     </button>
     <button (click)="setFilter('Unity 3D')"
-            class="px-3 py-1 rounded-full text-l md:text-xl"
-            [class.bg-accent]="filter === 'Unity 3D'"
-            [class.bg-secondary]="filter !== 'Unity 3D'">
+            class="mech-btn primary"
+            [class.primary]="filter === 'Unity 3D'"
+            [class.pressed]="filter === 'Unity 3D'"
+            [class.secondary]="filter !== 'Unity 3D'">
       Unity 3D
     </button>
     <button (click)="setFilter('Angular')"
-            class="px-3 py-1 rounded-full text-l md:text-xl"
-            [class.bg-accent]="filter === 'Angular'"
-            [class.bg-secondary]="filter !== 'Angular'">
+            class="mech-btn"
+            [class.primary]="filter === 'Angular'"
+            [class.pressed]="filter === 'Angular'"
+            [class.secondary]="filter !== 'Angular'">
       Angular
+    </button>
+    <button (click)="setFilter('VR')"
+            class="mech-btn"
+            [class.primary]="filter === 'VR'"
+            [class.pressed]="filter === 'VR'"
+            [class.secondary]="filter !== 'VR'">
+      VR
+    </button>
+    <button (click)="setFilter('IA')"
+            class="mech-btn"
+            [class.primary]="filter === 'IA'"
+            [class.pressed]="filter === 'IA'"
+            [class.secondary]="filter !== 'IA'">
+      IA
     </button>
   </div>
 
   <!-- Liste projets -->
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
-    @for (project of filteredProjects; track project.id) {
-      <project-card [project]="project"></project-card>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12"  [appFlipList]="{ duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }">
+    @for (project of filteredProjects; track project.id; let i = $index) {
+      <div class="will-change-transform"
+        [attr.data-flip-key]="project.id"
+        animate.leave="card-leave">
+        <project-card
+          class="card"
+          animate.enter="card-enter"
+          animate.leave="card-leave"
+          [style.--i]="i"
+          [project]="project">
+        </project-card>
+      </div>
     }
   </div>
 </div>
