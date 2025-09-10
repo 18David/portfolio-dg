@@ -27,8 +27,14 @@ module.exports = async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: Number(SMTP_PORT),
-      secure: Number(SMTP_PORT) === 465,
-      auth: { user: SMTP_USER, pass: SMTP_PASS }
+      secure: false,                     // 587 = STARTTLS (pas SSL direct)
+      requireTLS: true,
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
+      tls: {
+        minVersion: 'TLSv1.2'
+      },
+      logger: true,                      // logs dans la console Vercel
+      debug: true
     });
 
     const info = await transporter.sendMail({
@@ -42,6 +48,10 @@ module.exports = async function handler(req, res) {
         <p>${String(message).replace(/\n/g, '<br>')}</p>
       `
     });
+
+    console.log('SMTP response:', info.response);
+    console.log('Accepted:', info.accepted);
+    console.log('Rejected:', info.rejected);
 
     return res.status(200).json({ ok: true, id: info.messageId });
   } catch (e) {
