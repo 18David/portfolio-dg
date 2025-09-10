@@ -1,0 +1,89 @@
+<div class="w-full mx-auto px-12 md:px-48 py-12 bg-primary flex flex-col gap-12 grow">
+  <h1 class="font-title text-3xl font-bold text-secondary">Contact</h1>
+
+  <!-- Coordonnées -->
+  <div class="font-body flex flex-col gap-4 text-secondary space-y-2">
+    <div class="flex flex-row gap-4">
+      <span class="font-medium">Email :</span>
+      <a
+        href="mailto:18goncalves.david@gmail.com"
+        class="text-accent underline"
+      >
+      18goncalves.david@gmail.com
+      </a>
+    </div>
+    <div class="flex flex-row gap-4">
+      <span class="font-medium">Téléphone :</span>
+      <a href="tel:+33664751024" class="text-accent underline"
+        >+336.64.75.10.24</a
+      >
+    </div>
+    <div class="flex flex-row gap-4">
+      <a href="https://www.linkedin.com/in/david-gon%C3%A7alves-81b01ba9/" target="_blank" aria-label="LinkedIn" class="hover:text-accent transition-colors">
+        <fa-icon [icon]="faLinkedinIn" class="text-lg"></fa-icon>
+      </a>
+    </div>
+  </div>
+
+  <!-- Formulaire -->
+  <form
+    (ngSubmit)="submit()"
+    [formGroup]="form"
+    class="bg-white rounded-2xl shadow p-6 space-y-4 font-body"
+  >
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm text-gray-600 mb-1">Nom</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:outline-none focus:border-accent"
+          placeholder="Votre nom"
+        />
+        @if (f.name.touched && f.name.invalid) {
+        <p class="text-xs text-red-600 mt-1">Veuillez renseigner votre nom.</p>
+        }
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-600 mb-1">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:outline-none focus:border-accent"
+          placeholder="vous@exemple.com"
+        />
+        @if (f.email.touched && f.email.invalid) {
+        <p class="text-xs text-red-600 mt-1">Adresse email invalide.</p>
+        }
+      </div>
+    </div>
+
+    <div>
+      <label class="block text-sm text-gray-600 mb-1">Message</label>
+      <textarea
+        formControlName="message"
+        rows="6"
+        class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:outline-none focus:border-accent"
+        placeholder="Votre message..."
+      ></textarea>
+      @if (f.message.touched && f.message.invalid) {
+      <p class="text-xs text-red-600 mt-1">Minimum 10 caractères.</p>
+      }
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button
+        type="submit"
+        [disabled]="sending || form.invalid"
+        class="mech-btn primary"
+        (click)="playClickSound()"
+      >
+        @if (!sending) { Envoyer } @else { Envoi… }
+      </button>
+      @if (done) {
+      <span class="text-sm text-green-700">Message envoyé ✔</span> } @if (error)
+      { <span class="text-sm text-red-700">{{ error }}</span> }
+    </div>
+  </form>
+</div>

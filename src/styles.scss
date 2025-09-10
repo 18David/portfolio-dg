@@ -18,7 +18,7 @@
   border: none;
   border-radius: 0.75rem;
 
-  font: var(--mat-sys-label-large);
+  font: var(--mat-sys-body-medium);
   cursor: pointer;
   user-select: none;
 
@@ -37,6 +37,36 @@
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0 var(--mat-sys-primary);
   }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    pointer-events: none;           /* plus de hover/clic */
+    transition: none !important;    /* stop anim */
+    transform: none !important;     /* pas d’enfoncement */
+    box-shadow: 4px 4px 0 var(--mat-sys-primary) !important; /* bord par défaut */
+    opacity: .55;                   /* grisé */
+    filter: grayscale(60%) saturate(85%) brightness(95%);
+  }
+
+  /* Sécurité : neutralise hover/active si jamais appliqués */
+  &:disabled:hover,
+  &.disabled:hover,
+  &[aria-disabled="true"]:hover,
+  &:disabled:active,
+  &.disabled:active,
+  &[aria-disabled="true"]:active {
+    transform: none !important;
+    box-shadow: 4px 4px 0 var(--mat-sys-primary) !important;
+  }
+}
+
+/* Optionnel : si tu veux forcer un texte un peu plus pâle */
+.mech-btn:disabled,
+.mech-btn.disabled,
+.mech-btn[aria-disabled="true"] {
+  color: color-mix(in srgb, var(--mat-sys-primary) 70%, #000 30%);
 }
 
 /* Variante principale (fond secondary) */
