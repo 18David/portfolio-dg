@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "Portfólio de David Gonçalves"
+  },
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "home": {
+    "roles": {
+      "fullstack": "Desenvolvedor Full-Stack",
+      "unity": "Desenvolvedor Unity",
+      "iot": "Maker/IoT"
+    },
+    "cta": "Ver minhas realizações"
+  },
+  "footer": {
+    "language": "Idioma"
+  }
+}

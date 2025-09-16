@@ -1,0 +1,38 @@
+{
+  "app": {
+    "title": "Portfolio de David Gonçalves"
+  },
+  "nav": {
+    "home": "Accueil",
+    "projects": "Réalisations",
+    "contact": "Contact"
+  },
+  "home": {
+    "roles": {
+      "fullstack": {
+        "title": "Développeur Fullstack",
+        "tech_1": "Angular",
+        "tech_2": "NodeJS"
+      },
+      "unity": {
+        "title": "Développeur Unity",
+        "tech_1": "Réalité Mixte",
+        "tech_2": "Serious Game"
+      }
+    },
+    "exp": {
+      "title": "Mon Expérience",
+      "desc": "Je conçois des expériences interactives mêlant réalité mixte, serious games et interfaces immersives. Fort d'une expérience de plus de 6 ans dans le développement d'outils pédagogiques, scientifiques et scénographiques, je transforme des idées complexes en solutions accessibles et engageantes."
+    },
+    "passions": {
+      "title": "Mes Passions",
+      "desc_1": "Ancien joueur de hockey sur glace en compétition, je continue aujourd'hui cette pratique en loisir, avec le même esprit d'équipe et la même rigueur que j'applique dans mes projets professionnels.",
+      "desc_2": "Passionné de jeux vidéo, j'apprécie particulièrement les jeux compétitifs comme Rocket League, ainsi que les simulations sportives de hockey ou de football. Au-delà du divertissement, ces jeux m'apportent une véritable stimulation : ils développent mes réflexes, ma concentration et mon esprit d'équipe, des qualités que je transpose également dans mon approche du développement logiciel.",
+      "desc_3": "Toujours curieux des nouvelles tendances technologiques, je m'intéresse à des domaines comme la réalité virtuelle, la 3D ou l'impression additive. J'aime tester, expérimenter et repousser les limites de ces outils, avec la même créativité et rigueur que dans mes projets professionnels. Cette passion alimente ma veille et me permet de rester en avance sur les solutions interactives de demain."
+    },
+    "cta": "Voir mes réalisations"
+  },
+  "footer": {
+    "language": "Langue"
+  }
+}

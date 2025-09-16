@@ -1,0 +1,22 @@
+<div class="hidden md:flex flex-col md:flex-row inline-flex items-center gap-2">
+  @for(l of langs; track l.code){
+    <button
+
+      class="mech-btn"
+      [class.primary]="current === l.code"
+      [class.pressed]="current === l.code"
+      [class.secondary]="current !== l.code"
+      (click)="set(l.code)">
+      {{ l.label }}
+    </button>
+  }
+</div>
+<div class="md:hidden flex w-auto">
+  <mat-form-field class="mech-select">
+    <mat-select [value]="current" (selectionChange)="set($event.value)" (openedChange)="playClickSound()" >
+      @for(l of langs; track l.code){
+        <mat-option [value]="l.code" class="">{{ l.label }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>

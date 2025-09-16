@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "David Gonçalves — Portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "roles": {
+      "fullstack": "Full-Stack Developer",
+      "unity": "Unity Developer",
+      "iot": "IoT Tinkerer"
+    },
+    "cta": "See my work"
+  },
+  "footer": {
+    "language": "Language"
+  }
+}
