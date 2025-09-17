@@ -1,51 +1,64 @@
 <!-- Section présentation de mes metiers-->
 <div
-  class="h-auto w-full bg-secondary flex flex-col lg:flex-row gap-24 lg:items-center justify-start py-24"
+  class="h-auto w-full bg-secondary flex flex-col gap-12 md:gap-24 lg:items-center justify-start py-12 md:py-24"
 >
   <div
-    class="h-full w-auto lg:w-1/2 bg-primary flex flex-row items-start justify-start p-12 md:p-24 pr-24 rounded-r-full mr-8 md:mr-24 lg:mr-0"
+    class="w-full flex-row flex items-center justify-center"
   >
-    <div class="text-secondary">
-      <div class="flex flex-col gap-8">
-        <p class="capitalize text-3xl font-title">
-          {{ 'home.roles.fullstack.title' | translate }}
-        </p>
-        <div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between md:items-center">
-          <div class="font-body text-l md:text-2xl w-auto text-nowrap flex flex-row md:flex-col gap-4">
-            <div>{{ 'home.roles.fullstack.tech_1' | translate }}</div>
-            <div>{{ 'home.roles.fullstack.tech_2' | translate }}</div>
+    <img
+      src="/assets/images/pp.jpg"
+      alt="Profil Picture"
+      class="object-cover w-48 h-48 md:w-64 md:h-64 rounded-full"
+    />
+  </div>
+  <div
+  class="h-auto w-full flex flex-col lg:flex-row gap-12 md:gap-24 lg:items-center justify-start"
+  >
+    <div
+      class="h-full w-auto lg:w-1/2 bg-primary flex flex-row items-start justify-start p-12 md:p-24 pr-24 rounded-r-full mr-8 md:mr-24 lg:mr-0"
+    >
+      <div class="text-secondary">
+        <div class="flex flex-col gap-8">
+          <p class="capitalize text-3xl font-title">
+            {{ 'home.roles.fullstack.title' | translate }}
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between md:items-center">
+            <div class="font-body text-l md:text-2xl w-auto text-nowrap flex flex-row md:flex-col gap-4">
+              <div>{{ 'home.roles.fullstack.tech_1' | translate }}</div>
+              <div>{{ 'home.roles.fullstack.tech_2' | translate }}</div>
+            </div>
+            <button
+              class="mech-btn primary h-min"
+              (click)="playClickSound('Angular')"
+            >
+              {{ 'home.cta' | translate }}
+            </button>
+            <!--div>
+              <img src="/assets/images/angular-nodejs.png" alt="Unity" class="h-auto max-h-52 rounded-3xl aspect-square">
+            </div-->
           </div>
-          <button
-            class="mech-btn primary h-min"
-            (click)="playClickSound('Angular')"
-          >
-            {{ 'home.cta' | translate }}
-          </button>
-          <!--div>
-            <img src="/assets/images/angular-nodejs.png" alt="Unity" class="h-auto max-h-52 rounded-3xl aspect-square">
-          </div-->
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="h-full w-auto lg:w-1/2 bg-primary flex flex-row items-start justify-start p-12 md:p-24 pl-24 rounded-l-full ml-8 md:ml-24 lg:ml-0"
-  >
-    <div class="text-secondary">
-      <div class="flex flex-col gap-8">
-        <p class="capitalize text-3xl font-title">{{ 'home.roles.unity.title' | translate }}</p>
-        <div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between md:items-center">
-          <div class="font-body text-l md:text-2xl w-auto text-nowrap flex flex-row md:flex-col gap-4">
-            <div>{{ 'home.roles.unity.tech_1' | translate }}</div>
-            <div>{{ 'home.roles.unity.tech_2' | translate }}</div>
+    <div
+      class="h-full w-auto lg:w-1/2 bg-primary flex flex-row items-start justify-start p-12 md:p-24 pl-24 rounded-l-full ml-8 md:ml-24 lg:ml-0"
+    >
+      <div class="text-secondary">
+        <div class="flex flex-col gap-8">
+          <p class="capitalize text-3xl font-title">{{ 'home.roles.unity.title' | translate }}</p>
+          <div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between md:items-center">
+            <div class="font-body text-l md:text-2xl w-auto text-nowrap flex flex-row md:flex-col gap-4">
+              <div>{{ 'home.roles.unity.tech_1' | translate }}</div>
+              <div>{{ 'home.roles.unity.tech_2' | translate }}</div>
+            </div>
+            <button
+              class="mech-btn primary h-min"
+              (click)="playClickSound('Unity 3D')"
+            >
+              {{ 'home.cta' | translate }}
+            </button>
+            <!--img src="/assets/images/unity3D.avif" alt="Unity" class="h-auto max-h-52 rounded-3xl"-->
           </div>
-          <button
-            class="mech-btn primary h-min"
-            (click)="playClickSound('Unity 3D')"
-          >
-            {{ 'home.cta' | translate }}
-          </button>
-          <!--img src="/assets/images/unity3D.avif" alt="Unity" class="h-auto max-h-52 rounded-3xl"-->
         </div>
       </div>
     </div>

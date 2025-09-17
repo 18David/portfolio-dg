@@ -15,7 +15,7 @@
   <mat-form-field class="mech-select">
     <mat-select [value]="current" (selectionChange)="set($event.value)" (openedChange)="playClickSound()" >
       @for(l of langs; track l.code){
-        <mat-option [value]="l.code" class="">{{ ('lang.' + l.code) | translate }}</mat-option>
+        <mat-option [value]="l.code" class="">{{ l.label }}</mat-option>
       }
     </mat-select>
   </mat-form-field>

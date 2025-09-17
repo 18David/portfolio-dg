@@ -9,4 +9,12 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [RouterModule,TranslateModule],
   templateUrl: './bottom-nav.component.html'
 })
-export class BottomNavComponent {}
+export class BottomNavComponent {
+
+  clickSound = new Audio('/assets/sounds/click.mp3');
+
+  playClickSound() {
+    this.clickSound.currentTime = 0; // reset pour spam rapide
+    this.clickSound.play();
+  }
+}

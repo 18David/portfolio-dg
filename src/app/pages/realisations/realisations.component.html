@@ -1,10 +1,10 @@
-<div class="w-full mx-auto px-12 md:px-48 py-12 bg-primary flex flex-col gap-12">
-  <h2 class="font-title text-3xl font-bold text-secondary mb-6">
+<div class="w-full mx-auto px-12 md:px-48 py-12 md:py-24 bg-primary flex flex-col gap-12 ">
+  <h2 class="font-title text-3xl font-bold text-secondary">
     {{ 'work.title' | translate }}
   </h2>
 
   <!-- Filtres -->
-  <div class="flex gap-4 font-body">
+  <div class="flex flex-wrap gap-4 font-body">
     <button (click)="setFilter(null)"
             class="mech-btn primary"
             [class.primary]="!filter"
@@ -43,7 +43,7 @@
   </div>
 
   <!-- Liste projets -->
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12"  [appFlipList]="{ duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-24"  [appFlipList]="{ duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }">
     @for (project of filteredProjects; track project.id; let i = $index) {
       <div class="will-change-transform"
         [attr.data-flip-key]="project.id"
