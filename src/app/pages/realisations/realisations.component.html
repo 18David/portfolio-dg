@@ -1,6 +1,6 @@
 <div class="w-full mx-auto px-12 md:px-48 py-12 bg-primary flex flex-col gap-12">
   <h2 class="font-title text-3xl font-bold text-secondary mb-6">
-    Mes réalisations
+    {{ 'work.title' | translate }}
   </h2>
 
   <!-- Filtres -->
@@ -10,35 +10,35 @@
             [class.primary]="!filter"
             [class.pressed]="!filter"
             [class.secondary]="filter">
-      Tous
+      {{ 'work.filters.all' | translate }}
     </button>
     <button (click)="setFilter('Unity 3D')"
             class="mech-btn primary"
             [class.primary]="filter === 'Unity 3D'"
             [class.pressed]="filter === 'Unity 3D'"
             [class.secondary]="filter !== 'Unity 3D'">
-      Unity 3D
+      {{ 'work.filters.unity' | translate }}
     </button>
     <button (click)="setFilter('Angular')"
             class="mech-btn"
             [class.primary]="filter === 'Angular'"
             [class.pressed]="filter === 'Angular'"
             [class.secondary]="filter !== 'Angular'">
-      Angular
+      {{ 'work.filters.angular' | translate }}
     </button>
     <button (click)="setFilter('VR')"
             class="mech-btn"
             [class.primary]="filter === 'VR'"
             [class.pressed]="filter === 'VR'"
             [class.secondary]="filter !== 'VR'">
-      VR
+      {{ 'work.filters.vr' | translate }}
     </button>
     <button (click)="setFilter('IA')"
             class="mech-btn"
             [class.primary]="filter === 'IA'"
             [class.pressed]="filter === 'IA'"
             [class.secondary]="filter !== 'IA'">
-      IA
+      {{ 'work.filters.ai' | translate }}
     </button>
   </div>
 

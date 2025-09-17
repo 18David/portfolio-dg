@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
@@ -13,7 +14,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     MatInputModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    TranslateModule
   ]
 })
 export class LanguageSwitcherComponent {

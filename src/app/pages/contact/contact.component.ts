@@ -4,6 +4,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'contact',
@@ -12,6 +13,7 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
     CommonModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    TranslateModule
   ],
   templateUrl: './contact.component.html'
 })

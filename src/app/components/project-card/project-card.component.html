@@ -97,35 +97,34 @@
   <h3
     class="font-title text-lg font-semibold text-accent border border-2 border-t-0 rounded-b-2xl border-accent bg-primary px-4 py-2"
   >
-    {{ project.title }}
+    {{ ('projects.' + project.id + '.title') | translate }}
   </h3>
 
   <!-- Infos -->
   <div class="p-4 flex flex-col gap-2 flex-1">
     <p class="font-body text-sm text-primary flex-1">
-      {{ project.description }}
+      {{ ('projects.' + project.id + '.short') | translate }}
     </p>
 
     <div class="flex flex-wrap gap-2 mt-2">
       @for (keyword of project.keywords; track keyword) {
       <span class="px-2 py-1 rounded-full text-xs bg-primary text-secondary">
-        {{ keyword }}
+        {{ ('projects.keywords.' + keyword) | translate: { def: keyword } }}
       </span>
       }
     </div>
     <button class="mech-btn primary" (click)="toggleDetails()">
-      @if (!showDetails) { Plus de détails } @else { Moins de détails }
+      @if (!showDetails) { {{ 'projects.cta.more' | translate }} } @else { {{ 'projects.cta.less' | translate }} }
     </button>
-
-    @if (showDetails) {
-    <div class="mt-3 text-xs text-primary space-y-1">
-      <p>Année : {{ project.date | date : "yyyy" }}</p>
-      @if (project.duration) {
-      <p>Durée : {{ project.duration }}</p>
-      }
-      <p>Fait avec : {{ project.madeWith.join(", ") }}</p>
-      <p>Fait pour : {{ project.madeFor }}</p>
+    <div class="details-wrap" [class.open]="showDetails" aria-hidden="{{!showDetails}}">
+      <div class="details mt-3 text-xs text-primary space-y-1">
+        <p>{{ 'labels.year' | translate }} : {{ project.date | date : "yyyy" }}</p>
+        @if (project.duration) { <p>{{ 'labels.duration' | translate }} : {{ project.duration }}</p> }
+        <p>{{ 'labels.madeWith' | translate }} : {{ project.madeWith.join(", ") }}</p>
+        <p>{{ 'labels.madeFor' | translate }} : {{ project.madeFor }}</p>
+      </div>
     </div>
-    }
+
+
   </div>
 </div>

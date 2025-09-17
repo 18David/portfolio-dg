@@ -1,0 +1,32 @@
+/* Conteneur animé par la grille : 0fr (fermé) -> 1fr (ouvert) */
+.details-wrap {
+  display: grid;
+  grid-template-rows: 0fr;                   /* fermé */
+  transition:
+    grid-template-rows .4s cubic-bezier(0.22,1,0.36,1),
+    margin-top         .4s cubic-bezier(0.22,1,0.36,1);
+  margin-top: 0;                              /* fermé */
+}
+
+/* Le contenu interne est masqué quand la ligne = 0fr */
+.details-wrap > .details {
+  overflow: hidden;
+  /* petit effet “grow/fade” optionnel */
+  transform: scaleY(.98);
+  transform-origin: top;
+  opacity: 0;
+  transition:
+    transform .35s cubic-bezier(0.22,1,0.36,1),
+    opacity   .25s ease;
+    margin-top: 0rem;
+}
+
+/* État ouvert */
+.details-wrap.open {
+  grid-template-rows: 1fr;                    /* ouvert */
+  margin-top: .75rem;                         /* ≈ mt-3 */
+}
+.details-wrap.open > .details {
+  transform: scaleY(1);
+  opacity: 1;
+}

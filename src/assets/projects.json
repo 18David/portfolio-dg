@@ -1,7 +1,7 @@
 [
   {
     "id": "table-interactive-pedagogique",
-    "title": "Table interactive pédagogique — Valorisation des déchets plastiques",
+    "title": "Table interactive pédagogique - Valorisation des déchets plastiques",
     "description": "Table interactive sous Unity conçue pour expliquer le processus de valorisation des déchets plastiques. Intégration de capteurs NFC (détection d’objets), Arduino Mega, mini-PC et éclairage LED pour orchestrer les interactions. Pièces mécaniques imprimées en 3D, circuits imprimés (PCB) sur mesure et structure fabriquée en découpe numérique pour un usage scolaire mêlant électronique et design interactif.",
     "media": [
       { "type": "image", "src": "/assets/projects/table1.jpg" },
@@ -26,11 +26,11 @@
       "PCB sur mesure",
       "Découpe numérique (CNC)"
     ],
-    "madeFor": "SUEZ — UVE Landemont (usage scolaire)"
+    "madeFor": "SUEZ - UVE Landemont (usage scolaire)"
   },
   {
     "id": "explorations360",
-    "title": "Explorations360 — création et diffusion d'expériences 360°",
+    "title": "Explorations360 - création et diffusion d'expériences 360°",
     "description": "Plateforme en ligne pour composer et partager des visites 360° interactives sans code, avec un éditeur en glisser-déposer (textes, icônes, photos/vidéos, objets 3D, points GPS, sons), diffusables sur le web, smartphone/tablette et casques VR. Propose aussi une offre clé-en-main (captation 360, scénarisation, publication) et des packs incluant la mise à disposition de casques.",
     "media": [
       { "type": "video", "src": "https://www.youtube.com/embed/JPotbJPVPKw" }

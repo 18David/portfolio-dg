@@ -1,12 +1,12 @@
 <div class="w-full mx-auto px-12 md:px-48 py-12 bg-primary flex flex-col gap-12 grow">
   <div class="flex flex-col md:flex-row gap-12 md:justify-between">
     <div class="flex flex-col gap-12">
-      <h1 class="font-title text-3xl font-bold text-secondary">Contact</h1>
+      <h1 class="font-title text-3xl font-bold text-secondary">{{ 'contact.title' | translate }}</h1>
 
       <!-- Coordonnées -->
         <div class="font-body flex flex-col gap-4 text-secondary space-y-2">
           <div class="flex flex-row gap-4">
-            <span class="font-medium">Email :</span>
+            <span class="font-medium">{{ 'contact.coords.emailLabel' | translate }}</span>
             <a
               href="mailto:18goncalves.david@gmail.com"
               class="text-accent underline"
@@ -15,9 +15,9 @@
             </a>
           </div>
           <div class="flex flex-row gap-4">
-            <span class="font-medium">Téléphone :</span>
+            <span class="font-medium">{{ 'contact.coords.phoneLabel' | translate }}</span>
             <a href="tel:+33664751024" class="text-accent underline"
-              >+336.64.75.10.24</a
+              >{{ 'contact.coords.phoneNumber' | translate }}</a
             >
           </div>
           <div class="flex flex-row gap-4">
@@ -53,39 +53,39 @@
   >
     <div class="grid md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm text-gray-600 mb-1">Nom</label>
+        <label class="block text-sm text-gray-600 mb-1">{{ 'contact.form.name.label' | translate }}</label>
         <input
           formControlName="name"
           type="text"
           class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:outline-none focus:border-accent"
-          placeholder="Votre nom"
+          [placeholder]="'contact.form.name.placeholder' | translate"
         />
         @if (f.name.touched && f.name.invalid) {
-        <p class="text-xs text-red-600 mt-1">Veuillez renseigner votre nom.</p>
+        <p class="text-xs text-red-600 mt-1">{{ 'contact.form.name.error' | translate }}</p>
         }
       </div>
 
       <div>
-        <label class="block text-sm text-gray-600 mb-1">Email</label>
+        <label class="block text-sm text-gray-600 mb-1">{{ 'contact.form.email.label' | translate }}</label>
         <input
           formControlName="email"
           type="email"
           class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:outline-none focus:border-accent"
-          placeholder="vous@exemple.com"
+          [placeholder]="'contact.form.email.placeholder' | translate"
         />
         @if (f.email.touched && f.email.invalid) {
-        <p class="text-xs text-red-600 mt-1">Adresse email invalide.</p>
+        <p class="text-xs text-red-600 mt-1">{{ 'contact.form.email.error' | translate }}</p>
         }
       </div>
     </div>
 
     <div>
-      <label class="block text-sm text-gray-600 mb-1">Message</label>
+      <label class="block text-sm text-gray-600 mb-1">{{ 'contact.form.message.label' | translate }}</label>
       <textarea
         formControlName="message"
         rows="6"
         class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:outline-none focus:border-accent"
-        placeholder="Votre message..."
+        [placeholder]="'contact.form.message.placeholder' | translate"
       ></textarea>
       @if (f.message.touched && f.message.invalid) {
       <p class="text-xs text-red-600 mt-1">Minimum 10 caractères.</p>
@@ -99,11 +99,14 @@
         class="mech-btn primary"
         (click)="playClickSound()"
       >
-        @if (!sending) { Envoyer } @else { Envoi… }
+        @if (!sending) { {{ 'contact.form.submit' | translate }} } @else { {{ 'contact.form.sending' | translate }} }
       </button>
       @if (done) {
-      <span class="text-sm text-green-700">Message envoyé ✔</span> } @if (error)
-      { <span class="text-sm text-red-700">{{ error }}</span> }
+        <span class="text-sm text-green-700">{{ 'contact.form.sent' | translate }}</span>
+      }
+      @if (error) {
+        <span class="text-sm text-red-700">{{ error }}</span>
+      }
     </div>
   </form>
 </div>

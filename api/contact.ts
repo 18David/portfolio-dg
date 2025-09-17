@@ -45,7 +45,7 @@ module.exports = async function handler(req, res) {
       replyTo: email,                               // le visiteur
       sender: fromAddr,                             // Header Sender (optionnel)
       envelope: { from: fromAddr, to: CONTACT_TO }, // MAIL FROM (Return-Path) = Free
-      subject: `Nouveau message du portfolio — ${name}`,
+      subject: `Nouveau message du portfolio - ${name}`,
       text: `De: ${name} <${email}>\n\n${message}`,
       html: `<p><strong>De :</strong> ${name} &lt;${email}&gt;</p><p>${String(message).replace(/\n/g,'<br>')}</p>`
     });

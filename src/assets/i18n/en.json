@@ -1,6 +1,9 @@
 {
   "app": {
-    "title": "David Gonçalves — Portfolio"
+    "title": "David Gonçalves - Portfolio"
+  },
+  "header": {
+    "logo": "David Gonçalves"
   },
   "nav": {
     "home": "Home",
@@ -9,13 +12,161 @@
   },
   "home": {
     "roles": {
-      "fullstack": "Full-Stack Developer",
-      "unity": "Unity Developer",
-      "iot": "IoT Tinkerer"
+      "fullstack": {
+        "title": "Full-stack Developer",
+        "tech_1": "Angular",
+        "tech_2": "NodeJS"
+      },
+      "unity": {
+        "title": "Unity Developer",
+        "tech_1": "Mixed Reality",
+        "tech_2": "Serious Games"
+      }
+    },
+    "exp": {
+      "title": "My Experience",
+      "desc": "I design interactive experiences blending mixed reality, serious games, and immersive interfaces. With 6+ years building educational, scientific, and scenographic tools, I turn complex ideas into accessible, engaging solutions."
+    },
+    "passions": {
+      "title": "My Passions",
+      "desc_1": "A former competitive ice hockey player, I still play for fun-with the same team spirit and rigor I bring to my professional projects.",
+      "desc_2": "I enjoy competitive games like Rocket League and sports sims such as hockey or football. Beyond entertainment, they sharpen my reflexes, focus, and teamwork-skills I apply to software development.",
+      "desc_3": "I'm always curious about new tech-VR, 3D, additive manufacturing. I love testing and pushing the limits of these tools with the same creativity and rigor as my projects. That passion fuels my research and keeps me ahead."
     },
     "cta": "See my work"
   },
+  "work": {
+    "title": "My Work",
+    "filters": {
+      "all": "All",
+      "unity": "Unity 3D",
+      "angular": "Angular",
+      "vr": "VR",
+      "ai": "AI"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "coords": {
+      "emailLabel": "Email:",
+      "phoneLabel": "Phone:",
+      "phoneNumber": "+33.664.751.024",
+      "emailAria": "Send an email",
+      "phoneAria": "Call the number"
+    },
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Please enter your name."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com",
+        "error": "Invalid email address."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Your message...",
+        "error": "Minimum 10 characters."
+      },
+      "submit": "Send",
+      "sending": "Sending…",
+      "sent": "Message sent ✔"
+    }
+  },
+  "projects": {
+    "cta": {
+      "more": "More details",
+      "less": "Less details"
+    },
+    "keywords": {
+      "Unity 3D": "Unity 3D",
+      "Angular": "Angular",
+      "Three.js": "Three.js",
+      "VR": "VR",
+      "360°": "360°",
+      "Visite virtuelle": "Virtual tour",
+      "Plateforme": "Platform",
+      "Easystory360": "Easystory360",
+      "Arduino": "Arduino",
+      "Impression 3D": "3D Printing",
+      "PCB sur mesure": "Custom PCB",
+      "Découpe numérique": "CNC Cutting",
+      "Archéologie": "Archaeology",
+      "Recherche scientifique": "Scientific research",
+      "Base de données": "Database",
+      "Patrimoine": "Heritage",
+      "IA": "AI",
+      "Simulation": "Simulation",
+      "Architecture": "Architecture",
+      "Laval Virtual": "Laval Virtual",
+      "Game": "Game",
+      "TypeScript": "TypeScript",
+      "Tailwind": "Tailwind",
+      "Material": "Material",
+      "Appwrite": "Appwrite"
+    },
+    "table-interactive-pedagogique": {
+      "title": "Interactive Educational Table - Plastic Waste Recovery",
+      "short": "Unity-based interactive table explaining plastic waste recovery with NFC sensors, Arduino, mini-PC, LEDs, and 3D-printed parts.",
+      "alt": "Photo of the interactive educational table"
+    },
+    "explorations360": {
+      "title": "Explorations360 - create and share 360° experiences",
+      "short": "Online platform to compose and share interactive 360° tours without coding.",
+      "alt": "Screenshot of the Explorations360 platform"
+    },
+    "grotte-tautavel": {
+      "title": "Tautavel Cave",
+      "short": "Research VR app to visualize and position archaeological artifacts in their exact location.",
+      "alt": "VR view of Tautavel Cave"
+    },
+    "vallee-tautavel": {
+      "title": "Tautavel Valley",
+      "short": "Virtual exploration enriched with AI to recreate prehistoric landscapes and lifestyles.",
+      "alt": "VR view of Tautavel Valley"
+    },
+    "forklift": {
+      "title": "Forklift Simulator",
+      "short": "Immersive VR simulation developed during a Master’s internship.",
+      "alt": "VR forklift simulation"
+    },
+    "airtight-house": {
+      "title": "Airtight House",
+      "short": "VR project simulating an airtight house.",
+      "alt": "VR view of the airtight house"
+    },
+    "vrception": {
+      "title": "VRCeption",
+      "short": "VR experience with a time limit, presented at Laval Virtual Fantasy.",
+      "alt": "Screenshot of the VRCeption experience"
+    },
+    "vr-card-game": {
+      "title": "VR Card Game",
+      "short": "Virtual reality card game developed as a junior Master’s project.",
+      "alt": "Screenshot of VR Card Game"
+    }
+  },
+  "labels": {
+    "tech": "Tech",
+    "role": "Role",
+    "client": "Client",
+    "year": "Year",
+    "duration": "Duration",
+    "madeWith": "Made with",
+    "madeFor": "Made for"
+  },
+  "social": {
+    "linkedin": "LinkedIn"
+  },
   "footer": {
-    "language": "Language"
+    "language": "Language",
+    "rights": "David Gonçalves - All rights reserved"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English",
+    "pt": "Português"
   }
 }

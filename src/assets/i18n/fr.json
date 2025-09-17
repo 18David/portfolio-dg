@@ -2,6 +2,9 @@
   "app": {
     "title": "Portfolio de David Gonçalves"
   },
+  "header": {
+    "logo": "David Gonçalves"
+  },
   "nav": {
     "home": "Accueil",
     "projects": "Réalisations",
@@ -32,7 +35,138 @@
     },
     "cta": "Voir mes réalisations"
   },
+  "work": {
+    "title": "Mes réalisations",
+    "filters": {
+      "all": "Tous",
+      "unity": "Unity 3D",
+      "angular": "Angular",
+      "vr": "VR",
+      "ai": "IA"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "coords": {
+      "emailLabel": "Email :",
+      "phoneLabel": "Téléphone :",
+      "phoneNumber": "06.64.75.10.24",
+      "emailAria": "Envoyer un email",
+      "phoneAria": "Appeler le numéro"
+    },
+    "form": {
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom",
+        "error": "Veuillez renseigner votre nom."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "vous@exemple.com",
+        "error": "Adresse email invalide."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Votre message...",
+        "error": "Minimum 10 caractères."
+      },
+      "submit": "Envoyer",
+      "sending": "Envoi…",
+      "sent": "Message envoyé ✔"
+    }
+  },
+  "projects": {
+    "cta": {
+      "more": "Plus de détails",
+      "less": "Moins de détails"
+    },
+    "keywords": {
+      "Unity 3D": "Unity 3D",
+      "Angular": "Angular",
+      "Three.js": "Three.js",
+      "VR": "VR",
+      "360°": "360°",
+      "Visite virtuelle": "Visite virtuelle",
+      "Plateforme": "Plateforme",
+      "Easystory360": "Easystory360",
+      "Arduino": "Arduino",
+      "Impression 3D": "Impression 3D",
+      "PCB sur mesure": "PCB sur mesure",
+      "Découpe numérique": "Découpe numérique",
+      "Archéologie": "Archéologie",
+      "Recherche scientifique": "Recherche scientifique",
+      "Base de données": "Base de données",
+      "Patrimoine": "Patrimoine",
+      "IA": "IA",
+      "Simulation": "Simulation",
+      "Architecture": "Architecture",
+      "Laval Virtual": "Laval Virtual",
+      "Game": "Jeu",
+      "TypeScript": "TypeScript",
+      "Tailwind": "Tailwind",
+      "Material": "Material",
+      "Appwrite": "Appwrite"
+    },
+    "table-interactive-pedagogique": {
+      "title": "Table interactive pédagogique - Valorisation des déchets plastiques",
+      "short": "Table Unity interactive expliquant la valorisation des déchets plastiques, avec capteurs NFC, Arduino, mini-PC, LEDs et pièces imprimées en 3D.",
+      "alt": "Photo de la table interactive pédagogique"
+    },
+    "explorations360": {
+      "title": "Explorations360 - création et diffusion d'expériences 360°",
+      "short": "Plateforme en ligne pour composer et partager des visites 360° interactives sans code.",
+      "alt": "Capture de la plateforme Explorations360"
+    },
+    "grotte-tautavel": {
+      "title": "Grotte de Tautavel",
+      "short": "Application de recherche en VR pour visualiser et positionner les artefacts archéologiques découverts.",
+      "alt": "Vue de la grotte de Tautavel en VR"
+    },
+    "vallee-tautavel": {
+      "title": "Vallée de Tautavel",
+      "short": "Exploration virtuelle de la vallée, enrichie d’intelligence artificielle pour recréer les modes de vie préhistoriques.",
+      "alt": "Vue VR de la vallée de Tautavel"
+    },
+    "forklift": {
+      "title": "Forklift Simulator",
+      "short": "Simulation immersive en VR réalisée lors d’un stage de Master 2.",
+      "alt": "Simulation VR d’un chariot élévateur"
+    },
+    "airtight-house": {
+      "title": "Airtight House",
+      "short": "Projet VR simulant une maison étanche à l’air.",
+      "alt": "Vue VR de la maison étanche à l’air"
+    },
+    "vrception": {
+      "title": "VRCeption",
+      "short": "Expérience VR avec limite de temps, présentée au Laval Virtual Fantasy.",
+      "alt": "Capture de l’expérience VRCeption"
+    },
+    "vr-card-game": {
+      "title": "VR Card Game",
+      "short": "Jeu de cartes en VR développé comme projet junior de Master.",
+      "alt": "Capture du jeu VR Card Game"
+    }
+  },
+  "labels": {
+    "tech": "Technos",
+    "role": "Rôle",
+    "client": "Client",
+    "year": "Année",
+    "duration": "Durée",
+    "madeWith": "Fait avec",
+    "madeFor": "Fait pour"
+  },
+  "social": {
+    "linkedin": "LinkedIn"
+  },
   "footer": {
-    "language": "Langue"
+    "language": "Langue",
+    "rights": "David Gonçalves - Tous droits réservés"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English",
+    "pt": "Português"
   }
 }

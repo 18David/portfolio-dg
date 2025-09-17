@@ -2,6 +2,9 @@
   "app": {
     "title": "Portfólio de David Gonçalves"
   },
+  "header": {
+    "logo": "David Gonçalves"
+  },
   "nav": {
     "home": "Início",
     "projects": "Projetos",
@@ -9,13 +12,161 @@
   },
   "home": {
     "roles": {
-      "fullstack": "Desenvolvedor Full-Stack",
-      "unity": "Desenvolvedor Unity",
-      "iot": "Maker/IoT"
+      "fullstack": {
+        "title": "Desenvolvedor Full-stack",
+        "tech_1": "Angular",
+        "tech_2": "NodeJS"
+      },
+      "unity": {
+        "title": "Desenvolvedor Unity",
+        "tech_1": "Realidade Mista",
+        "tech_2": "Serious Games"
+      }
+    },
+    "exp": {
+      "title": "Minha Experiência",
+      "desc": "Desenho experiências interativas que combinam realidade mista, serious games e interfaces imersivas. Com mais de 6 anos criando ferramentas educacionais, científicas e cenográficas, transformo ideias complexas em soluções acessíveis e envolventes."
+    },
+    "passions": {
+      "title": "Minhas Paixões",
+      "desc_1": "Ex-jogador de hóquei no gelo em competição, hoje continuo praticando por lazer - com o mesmo espírito de equipe e rigor que aplico nos projetos profissionais.",
+      "desc_2": "Gosto de jogos competitivos como Rocket League e simulações esportivas de hóquei ou futebol. Além do entretenimento, eles aprimoram reflexos, foco e trabalho em equipe - habilidades que levo para o desenvolvimento de software.",
+      "desc_3": "Estou sempre curioso sobre novas tecnologias - VR, 3D e impressão aditiva. Gosto de testar e ultrapassar limites com a mesma criatividade e rigor dos meus projetos. Essa paixão alimenta minha pesquisa e me mantém à frente."
     },
     "cta": "Ver minhas realizações"
   },
+  "work": {
+    "title": "Minhas realizações",
+    "filters": {
+      "all": "Todos",
+      "unity": "Unity 3D",
+      "angular": "Angular",
+      "vr": "VR",
+      "ai": "IA"
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "coords": {
+      "emailLabel": "Email:",
+      "phoneLabel": "Telefone:",
+      "phoneNumber": "+336.64.75.10.24",
+      "emailAria": "Enviar um email",
+      "phoneAria": "Ligar para o número"
+    },
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome",
+        "error": "Por favor, informe seu nome."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "voce@exemplo.com",
+        "error": "Endereço de email inválido."
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Sua mensagem...",
+        "error": "Mínimo de 10 caracteres."
+      },
+      "submit": "Enviar",
+      "sending": "Enviando…",
+      "sent": "Mensagem enviada ✔"
+    }
+  },
+  "projects": {
+    "cta": {
+      "more": "Mais detalhes",
+      "less": "Menos detalhes"
+    },
+    "keywords": {
+      "Unity 3D": "Unity 3D",
+      "Angular": "Angular",
+      "Three.js": "Three.js",
+      "VR": "VR",
+      "360°": "360°",
+      "Visite virtuelle": "Visita virtual",
+      "Plateforme": "Plataforma",
+      "Easystory360": "Easystory360",
+      "Arduino": "Arduino",
+      "Impression 3D": "Impressão 3D",
+      "PCB sur mesure": "PCB sob medida",
+      "Découpe numérique": "Corte CNC",
+      "Archéologie": "Arqueologia",
+      "Recherche scientifique": "Pesquisa científica",
+      "Base de données": "Banco de dados",
+      "Patrimoine": "Patrimônio",
+      "IA": "IA",
+      "Simulation": "Simulação",
+      "Architecture": "Arquitetura",
+      "Laval Virtual": "Laval Virtual",
+      "Game": "Jogo",
+      "TypeScript": "TypeScript",
+      "Tailwind": "Tailwind",
+      "Material": "Material",
+      "Appwrite": "Appwrite"
+    },
+    "table-interactive-pedagogique": {
+      "title": "Mesa Interativa Educacional - Valorização de resíduos plásticos",
+      "short": "Mesa interativa em Unity explicando a valorização de resíduos plásticos com sensores NFC, Arduino, mini-PC, LEDs e peças impressas em 3D.",
+      "alt": "Foto da mesa interativa educacional"
+    },
+    "explorations360": {
+      "title": "Explorations360 - criação e difusão de experiências 360°",
+      "short": "Plataforma online para compor e compartilhar visitas 360° interativas sem código.",
+      "alt": "Captura da plataforma Explorations360"
+    },
+    "grotte-tautavel": {
+      "title": "Gruta de Tautavel",
+      "short": "Aplicativo de pesquisa em VR para visualizar e posicionar artefatos arqueológicos descobertos.",
+      "alt": "Vista em VR da Gruta de Tautavel"
+    },
+    "vallee-tautavel": {
+      "title": "Vale de Tautavel",
+      "short": "Exploração virtual enriquecida com IA para recriar paisagens e modos de vida pré-históricos.",
+      "alt": "Vista em VR do Vale de Tautavel"
+    },
+    "forklift": {
+      "title": "Forklift Simulator",
+      "short": "Simulação imersiva em VR realizada durante um estágio de mestrado.",
+      "alt": "Simulação em VR de empilhadeira"
+    },
+    "airtight-house": {
+      "title": "Airtight House",
+      "short": "Projeto em VR simulando uma casa estanque ao ar.",
+      "alt": "Vista em VR da casa estanque ao ar"
+    },
+    "vrception": {
+      "title": "VRCeption",
+      "short": "Experiência VR com limite de tempo, apresentada no Laval Virtual Fantasy.",
+      "alt": "Captura da experiência VRCeption"
+    },
+    "vr-card-game": {
+      "title": "VR Card Game",
+      "short": "Jogo de cartas em VR desenvolvido como projeto júnior de mestrado.",
+      "alt": "Captura do jogo VR Card Game"
+    }
+  },
+  "labels": {
+    "tech": "Tecnologias",
+    "role": "Função",
+    "client": "Cliente",
+    "year": "Ano",
+    "duration": "Duração",
+    "madeWith": "Feito com",
+    "madeFor": "Feito para"
+  },
+  "social": {
+    "linkedin": "LinkedIn"
+  },
   "footer": {
-    "language": "Idioma"
+    "language": "Idioma",
+    "rights": "David Gonçalves - Todos os direitos reservados"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English",
+    "pt": "Português"
   }
 }

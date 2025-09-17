@@ -2,6 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Project } from '../../models/project.model';
 import { DatePipe } from '@angular/common';
 import {SafeUrlPipe} from '../../pipes/safe-url.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 
 @Component({
@@ -9,7 +11,8 @@ import {SafeUrlPipe} from '../../pipes/safe-url.pipe';
   templateUrl: './project-card.component.html',
   imports: [
     DatePipe,
-    SafeUrlPipe
+    SafeUrlPipe,
+    TranslateModule
   ],
   standalone: true,
   styleUrls: ['./project-card.component.scss']

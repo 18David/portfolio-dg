@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -10,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrls: ['./footer.component.scss'],
   imports: [
     FontAwesomeModule,
+    TranslateModule
   ],
 })
 export class FooterComponent {

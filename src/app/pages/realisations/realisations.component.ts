@@ -5,6 +5,8 @@ import { ProjectService } from 'src/app/services/project.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlipListDirective } from 'src/app/shared/flip-list.directive';
 import { take } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
+
 const LEAVE_MS = 200; // doit matcher ta transition .card-leave
 
 @Component({
@@ -14,7 +16,8 @@ const LEAVE_MS = 200; // doit matcher ta transition .card-leave
   standalone: true,
   imports: [
     ProjectCardComponent,
-    FlipListDirective
+    FlipListDirective,
+    TranslateModule
   ]
 
 })
