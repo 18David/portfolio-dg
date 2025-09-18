@@ -1,6 +1,8 @@
 import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
+import { isBrowser } from '../../utils/ssr-utils';
+
 
 
 export type SeoData = {
@@ -66,6 +68,7 @@ export class SeoService {
   }
 
   private setCanonical(url: string) {
+    if(!isBrowser()) return;
     // supprime les canonical existants
     const links = this.document.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]');
     links.forEach(l => l.parentElement?.removeChild(l));
@@ -77,6 +80,7 @@ export class SeoService {
   }
 
   private setJsonLd(json?: Record<string, any>) {
+    if(!isBrowser()) return;
     // supprime l’ancien script JSON-LD (identifié par id)
     const old = this.document.getElementById('ld-json-page');
     if (old) old.remove();

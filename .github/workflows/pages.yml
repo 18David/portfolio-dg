@@ -28,12 +28,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
-
-      - name: Print Angular versions (debug)
-        run: |
-          node -p "require('./package.json').dependencies"
-          node -p "require('./package.json').devDependencies"
+          cache: npm
 
       - name: Install
         run: npm ci
@@ -43,20 +38,24 @@ jobs:
 
       - name: Show dist after browser build (debug)
         run: |
-          echo "==== dist after ng build ===="
-          ls -la dist/portfolio-dg
+          echo "==== dist/portfolio-dg ===="
+          ls -la dist/portfolio-dg || true
+          echo "==== dist/portfolio-dg/browser ===="
           ls -la dist/portfolio-dg/browser || true
 
       - name: Prerender (SSR static)
-        run: npx ng run portfolio-dg:prerender
-
-      - name: Show dist after prerender (debug)
         run: |
-          echo "==== dist after prerender ===="
-          ls -la dist/portfolio-dg/browser
-          find dist/portfolio-dg/browser -maxdepth 2 -type f -name "index.html" -print
+          set -o pipefail
+          npx ng run portfolio-dg:prerender 2>&1 | tee prerender.log
 
-      - name: Create 404.html (SPA fallback)
+      - name: Print Angular error logs (if any)
+        run: |
+          echo "==== Angular CLI error logs (if exist) ===="
+          cat /tmp/ng-*/angular-errors.log || true
+          echo "==== Prerender step log ===="
+          tail -n +1 prerender.log || true
+
+      - name: Create 404.html
         run: cp dist/portfolio-dg/browser/index.html dist/portfolio-dg/browser/404.html
 
       - name: Upload artifact
