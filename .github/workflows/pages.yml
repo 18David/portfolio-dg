@@ -2,7 +2,7 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # change si ta branche par défaut est différente
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -17,32 +17,47 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max_old_space_size=4096
+      NG_CLI_ANALYTICS: "false"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Use Node 20.x
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
-      - name: Install deps
+      - name: Print Angular versions (debug)
+        run: |
+          node -p "require('./package.json').dependencies"
+          node -p "require('./package.json').devDependencies"
+
+      - name: Install
         run: npm ci
 
-      # IMPORTANT : base-href pour un "project page" (https://18david.github.io/portfolio-dg/)
-      - name: Build (production + prerender)
+      - name: Build (browser)
+        run: npx ng build --configuration production --base-href /portfolio-dg/ --verbose
+
+      - name: Show dist after browser build (debug)
         run: |
-          npx ng build --configuration production --base-href /portfolio-dg/
-          npx ng run portfolio-dg:prerender
+          echo "==== dist after ng build ===="
+          ls -la dist/portfolio-dg
+          ls -la dist/portfolio-dg/browser || true
 
-      # SPA fallback : une copie de index.html en 404.html (utile si tu ajoutes d'autres routes)
-      - name: Create 404.html
+      - name: Prerender (SSR static)
+        run: npx ng run portfolio-dg:prerender --verbose
+
+      - name: Show dist after prerender (debug)
+        run: |
+          echo "==== dist after prerender ===="
+          ls -la dist/portfolio-dg/browser
+          find dist/portfolio-dg/browser -maxdepth 2 -type f -name "index.html" -print
+
+      - name: Create 404.html (SPA fallback)
         run: cp dist/portfolio-dg/browser/index.html dist/portfolio-dg/browser/404.html
-
-      # (Optionnel) Si tu utilises un domaine custom, décommente et remplace :
-      # - name: Add CNAME
-      #   run: echo "www.ton-domaine.dev" > dist/portfolio-dg/browser/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
