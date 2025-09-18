@@ -1,5 +1,7 @@
 import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
-import { Title, Meta, DOCUMENT } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+
 
 export type SeoData = {
   title?: string;
