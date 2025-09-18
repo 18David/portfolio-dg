@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { TranslateModule } from '@ngx-translate/core';
+import { isBrowser } from '../../utils/ssr-utils';
 
 @Component({
   selector: 'contact',
@@ -18,14 +19,21 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './contact.component.html'
 })
 export class ContactComponent {
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) {
+    if (isBrowser()) {
+      this.clickSound = new Audio('/assets/sounds/click.mp3');
+    }
+  }
 
   faLinkedinIn = faLinkedinIn;
   sending = false;
   done = false;
   error: string | null = null;
 
-  clickSound = new Audio('/assets/sounds/click.mp3');
+  private clickSound: HTMLAudioElement | null = null;
 
 
   form = this.fb.group({
@@ -58,6 +66,7 @@ export class ContactComponent {
   get f() { return this.form.controls; }
 
   playClickSound() {
+    if (!this.clickSound) return;
     this.clickSound.currentTime = 0; // reset pour spam rapide
     this.clickSound.play();
   }

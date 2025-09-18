@@ -29,11 +29,14 @@ export class FlipListDirective {
 
   /** Snapshot AVANT la mutation de liste */
   prepare() {
+    if (!this.isBrowser) return;
     this.prev.clear();
     for (const el of this.items()) {
       const key = el.getAttribute('data-flip-key');
       if (!key) continue;
-      this.prev.set(key, el.getBoundingClientRect());
+      const rect = el.getBoundingClientRect?.();
+      if (!rect) continue;
+      this.prev.set(key, rect);
     }
   }
 
@@ -43,11 +46,16 @@ export class FlipListDirective {
    * Si aucun déplacement, ne "commit" PAS les positions (pour permettre un second tir).
    */
   play(): boolean {
-    if(this.isBrowser){
-      if (matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-        this.prev.clear(); return false;
-      }
+    if (!this.isBrowser) {                        // ✅ SSR: no-op
+      this.prev.clear();
+      return false;
     }
+
+    if (globalThis?.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      this.prev.clear();
+      return false;
+    }
+
 
     const curr = new Map<string, DOMRect>();
     let moved = 0;
@@ -57,6 +65,7 @@ export class FlipListDirective {
       if (!key) continue;
 
       const now = el.getBoundingClientRect();
+      if (!now) continue;
       curr.set(key, now);
 
       const was = this.prev.get(key);
@@ -70,7 +79,7 @@ export class FlipListDirective {
       el.style.willChange = 'transform';
       el.style.transition = 'none';
       el.style.transform  = `translate(${dx}px, ${dy}px)`;
-      void el.offsetWidth; // reflow
+      void (el as any).offsetWidth;
       el.style.transition = `transform ${this.duration}ms ${this.easing}`;
       el.style.transform  = '';
 
@@ -89,6 +98,7 @@ export class FlipListDirective {
   }
 
   private items(): HTMLElement[] {
+    if (!this.isBrowser) return [];
     return Array.from(this.host.nativeElement.querySelectorAll<HTMLElement>('[data-flip-key]'));
   }
 }

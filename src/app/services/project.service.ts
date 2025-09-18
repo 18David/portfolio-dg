@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Project } from '../models/project.model';
-import { isBrowser } from '../utils/ssr-utils';
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class ProjectService {
-  private browser = isBrowser();
-  private jsonUrl = 'assets/projects.json';
+  // Chemin absolu pour être robuste avec base-href et en SSR
+  private readonly jsonUrl = '/assets/projects.json';
 
   constructor(private http: HttpClient) {}
 
-  getProjects(): Observable<any[]> {
-    if (!this.browser) {
-      // en SSR, tu peux retourner un Observable vide
-      return this.http.get<any[]>(this.jsonUrl);
-    }
-    return this.http.get<Project[]>(this.jsonUrl);
+  getProjects(): Observable<Project[]> {
+    return this.http.get<Project[]>(this.jsonUrl).pipe(
+      // En SSR (ou si le fichier manque), on évite de faire planter le prerender
+      catchError(() => of([] as Project[]))
+    );
   }
 }

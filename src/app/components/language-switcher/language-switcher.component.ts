@@ -5,11 +5,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { isBrowser } from 'src/app/utils/ssr-utils';
 
 @Component({
   selector: 'language-switcher',
   templateUrl: './language-switcher.component.html',
+  standalone: true,
   imports: [
     FormsModule,
     MatInputModule,
@@ -24,15 +25,17 @@ export class LanguageSwitcherComponent {
     { code: 'en', label: 'En' },
     { code: 'pt', label: 'Pt' }
   ];
-  currentLabel = ""
   current = this.langService.current;
+  currentLabel = this.langs.find(l => l.code === this.current)?.label ?? '';
 
-  clickSound = new Audio('/assets/sounds/click.mp3');
+  private clickSound: HTMLAudioElement | null = null;
 
 
 
   constructor(private langService: LanguageService) {
-    this.currentLabel = this.langs.find(l => l.code === this.current)?.label ?? '';
+    if (isBrowser()) {
+      this.clickSound = new Audio('/assets/sounds/click.mp3');
+    }
   }
 
   async set(lang: 'fr'|'en'|'pt') {
@@ -45,6 +48,7 @@ export class LanguageSwitcherComponent {
   }
 
   playClickSound() {
+     if (!this.clickSound) return; // SSR: pas d’audio
     this.clickSound.currentTime = 0; // reset pour spam rapide
     this.clickSound.play();
   }

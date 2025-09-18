@@ -16,7 +16,7 @@ export class AppComponent {
   title = 'portfolio-dg';
 
   constructor(
-    private  langService: LanguageService,
+    private langService: LanguageService,
     private router: Router,
     private route: ActivatedRoute,
     private seo: SeoService,

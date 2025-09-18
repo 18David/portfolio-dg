@@ -16,11 +16,19 @@ import { isBrowser } from '../utils/ssr-utils';
 })
 export class HomeComponent {
   private isBrowser = isBrowser();
-  clickSound = new Audio('/assets/sounds/click.mp3');
+  private clickSound: HTMLAudioElement | null = null;
+
+  constructor() {
+    if (this.isBrowser) {
+      this.clickSound = new Audio('/assets/sounds/click.mp3');
+    }
+  }
 
   playClickSound(routeArg?: string) {
-    this.clickSound.currentTime = 0; // reset pour spam rapide
-    this.clickSound.play();
+    if (this.clickSound) {
+      this.clickSound.currentTime = 0;
+      this.clickSound.play().catch(() => {});
+    }
     if(routeArg && this.isBrowser) {
       setTimeout(() => {
         window.location.href = `/realisations?tag=${routeArg}`;

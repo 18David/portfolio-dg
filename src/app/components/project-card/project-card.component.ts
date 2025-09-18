@@ -3,8 +3,7 @@ import { Project } from '../../models/project.model';
 import { DatePipe } from '@angular/common';
 import {SafeUrlPipe} from '../../pipes/safe-url.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-
-
+import { isBrowser } from '../../utils/ssr-utils';
 
 @Component({
   selector: 'project-card',
@@ -21,7 +20,8 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
   @Input() project!: Project;
   showDetails = false;
 
-  clickSound = new Audio('/assets/sounds/click.mp3');
+  private readonly browser = isBrowser();
+  private clickSound: HTMLAudioElement | null = null;
 
   current = 0;
   progress = 0;                // 0..1 for current segment
@@ -32,7 +32,15 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
   private rafId: number | null = null;
   private lastTs = 0;
 
+  constructor() {
+    if (this.browser) {
+      this.clickSound = new Audio('/assets/sounds/click.mp3');
+    }
+  }
+
   playClickSound() {
+    if (!this.clickSound) return; // SSR: no audio
+
     this.clickSound.currentTime = 0; // reset pour spam rapide
     this.clickSound.play();
   }
@@ -52,6 +60,7 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
 
   // ------- Carousel control -------
   start() {
+    if (!this.browser) return;
     if (!this.hasMultiple) return;
     if (this.rafId !== null) return;
     this.lastTs = typeof performance !== 'undefined' ? performance.now() : Date.now();
@@ -73,10 +82,12 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
   }
 
   stop() {
-    if (this.rafId !== null) {
-      cancelAnimationFrame(this.rafId);
-      this.rafId = null;
-    }
+    if (!this.browser) return;
+    if (this.rafId === null) return;
+
+    cancelAnimationFrame(this.rafId);
+    this.rafId = null;
+
   }
 
   get hasMultiple() {
