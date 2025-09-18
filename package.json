@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prerender": "ng prerender portfolio-dg",
+    "build:prerender": "ng build --configuration production && ng prerender portfolio-dg"
   },
   "private": true,
   "dependencies": {

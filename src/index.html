@@ -2,12 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>PortfolioDg</title>
+  <title>David Gonçalves | Développeur Fullstack Angular & Unity / XR<</title>
+  <meta
+    name="description"
+    content="Portfolio de David Gonçalves — Développeur Fullstack (Angular/Node) et Unity/XR. Projets web, AR/VR, serious games et plus."
+  />
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://dgportfolio.eu/" />
+
+  <!-- ===== Open Graph (Facebook/LinkedIn, etc.) ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Portfolio David Gonçalves" />
+  <meta property="og:title" content="David Gonçalves | Développeur Fullstack & Unity/XR" />
+  <meta property="og:description" content="Projets Angular/Node, Unity/XR. Réalisations et contact." />
+  <meta property="og:url" content="https://dgportfolio.eu/" />
+  <meta property="og:image" content="https://dgportfolio.eu/assets/social/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ===== Twitter Cards ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="David Gonçalves | Développeur Fullstack & Unity/XR" />
+  <meta name="twitter:description" content="Portfolio. Angular/Node, Unity/XR." />
+  <meta name="twitter:image" content="https://dgportfolio.eu/assets/social/og-cover.png" />
+
+  <!-- ===== PWA / App Icons ===== -->
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" crossorigin="use-credentials" />
+  <meta name="theme-color" content="#030027" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+  <meta name="msapplication-TileColor" content="#030027" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Person",
+        "@id":"https://dgportfolio.eu/",
+        "name":"David Gonçalves",
+        "jobTitle":"Développeur Full-Stack & Unity/XR",
+        "url":"https://dgportfolio.eu/",
+        "image":"https://dgportfolio.eu/assets/social/profile.jpg",
+        "sameAs":[
+          "https://github.com/ton-github",
+          "https://www.linkedin.com/in/ton-linkedin"
+        ],
+        "knowsAbout":[
+          "Angular","Node.js","TypeScript","Unity","XR","AR/VR","Tailwind CSS",
+          "Home Assistant","IoT","ESPHome","Zigbee","OBS"
+        ]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://dgportfolio.eu/",
+        "url":"https://dgportfolio.eu/",
+        "name":"Portfolio David Gonçalves",
+        "publisher":{"@id":"https://dgportfolio.eu/"},
+        "inLanguage":"fr-FR",
+        "potentialAction":{
+          "@type":"SearchAction",
+          "target":"https://dgportfolio.eu/recherche?q={search_term_string}",
+          "query-input":"required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+  <noscript>Ce site fonctionne mieux avec JavaScript activé.</noscript>
 </head>
 <body>
   <app-root></app-root>
