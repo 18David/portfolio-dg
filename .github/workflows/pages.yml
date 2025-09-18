@@ -1,0 +1,60 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]  # change si ta branche par défaut est différente
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      # IMPORTANT : base-href pour un "project page" (https://18david.github.io/portfolio-dg/)
+      - name: Build (production)
+        run: |
+          npx ng build --configuration production --base-href /portfolio-dg/
+          npx ng prerender portfolio-dg
+
+      # SPA fallback : une copie de index.html en 404.html (utile si tu ajoutes d'autres routes)
+      - name: Create 404.html
+        run: cp dist/portfolio-dg/browser/index.html dist/portfolio-dg/browser/404.html
+
+      # (Optionnel) Si tu utilises un domaine custom, décommente et remplace :
+      # - name: Add CNAME
+      #   run: echo "www.ton-domaine.dev" > dist/portfolio-dg/browser/CNAME
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/portfolio-dg/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
