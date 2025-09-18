@@ -1,4 +1,4 @@
-import { Component, DOCUMENT, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { LanguageService } from './services/language.service';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { SeoData, SeoService } from './core/seo/seo.service';
@@ -16,13 +16,12 @@ export class AppComponent {
   title = 'portfolio-dg';
 
   constructor(
-    langService: LanguageService,
+    private  langService: LanguageService,
     private router: Router,
     private route: ActivatedRoute,
     private seo: SeoService,
-    @Inject(DOCUMENT) private document: Document
   ){
-    langService.setLanguage('fr');
+    this.langService.init();
     this.router.events
       .pipe(
         filter((e): e is NavigationEnd => e instanceof NavigationEnd),

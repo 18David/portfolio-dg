@@ -43,6 +43,7 @@ export class SeoService {
     if (data.canonical) this.setTag('property', 'og:url', data.canonical);
     if (data.image) {
       this.setTag('property', 'og:image', data.image);
+      this.setTag('property', 'og:image:secure_url', data.image);
       this.setTag('name', 'twitter:image', data.image);
     }
 
@@ -68,21 +69,27 @@ export class SeoService {
   }
 
   private setCanonical(url: string) {
-    if(!isBrowser()) return;
+    // fonctionne en SSR et en navigateur
+    const doc = this.document;
+    if (!doc?.head || !url) return;
+
     // supprime les canonical existants
-    const links = this.document.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]');
+    const links = doc.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]');
     links.forEach(l => l.parentElement?.removeChild(l));
+
     // ajoute un nouveau
     const linkEl = this.r.createElement('link') as HTMLLinkElement;
     linkEl.setAttribute('rel', 'canonical');
     linkEl.setAttribute('href', url);
-    this.r.appendChild(this.document.head, linkEl);
+    this.r.appendChild(doc.head, linkEl);
   }
 
   private setJsonLd(json?: Record<string, any>) {
-    if(!isBrowser()) return;
+    const doc = this.document;
+    if (!doc?.head) return;
+
     // supprime l’ancien script JSON-LD (identifié par id)
-    const old = this.document.getElementById('ld-json-page');
+    const old = doc.getElementById('ld-json-page');
     if (old) old.remove();
 
     if (!json) return;
@@ -91,6 +98,6 @@ export class SeoService {
     script.setAttribute('type', 'application/ld+json');
     script.setAttribute('id', 'ld-json-page');
     script.text = JSON.stringify(json);
-    this.r.appendChild(this.document.head, script);
+    this.r.appendChild(doc.head, script);
   }
 }

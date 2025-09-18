@@ -1,5 +1,7 @@
 // src/app/shared/flip-list.directive.ts
 import { Directive, ElementRef, Input } from '@angular/core';
+import { isBrowser } from '../utils/ssr-utils';
+
 
 type FlipOpts = number | { duration?: number; easing?: string; threshold?: number };
 
@@ -21,6 +23,7 @@ export class FlipListDirective {
   private easing   = 'cubic-bezier(0.22, 1, 0.36, 1)';
   private threshold = 0.5; // px
   private prev = new Map<string, DOMRect>();
+  private isBrowser = isBrowser();
 
   constructor(private host: ElementRef<HTMLElement>) {}
 
@@ -40,8 +43,10 @@ export class FlipListDirective {
    * Si aucun déplacement, ne "commit" PAS les positions (pour permettre un second tir).
    */
   play(): boolean {
-    if (matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-      this.prev.clear(); return false;
+    if(this.isBrowser){
+      if (matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+        this.prev.clear(); return false;
+      }
     }
 
     const curr = new Map<string, DOMRect>();
