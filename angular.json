@@ -45,11 +45,7 @@
               ]
             },
             "scripts": [],
-            "browser": "src/main.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
