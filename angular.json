@@ -81,9 +81,10 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@angular/build:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "browserTarget": "portfolio-dg:build:production",
+            "serverTarget": "portfolio-dg:server:production",
             "routes": [
               "/",
               "/realisations",
@@ -116,6 +117,19 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/portfolio-dg/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            }
           }
         }
       }
