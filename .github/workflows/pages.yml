@@ -44,9 +44,7 @@ jobs:
           ls -la dist/portfolio-dg/browser || true
 
       - name: Prerender (SSR static)
-        run: |
-          set -o pipefail
-          npx ng run portfolio-dg:prerender 2>&1 | tee prerender.log
+        run: npx ng run portfolio-dg:prerender
 
       - name: Print Angular error logs (if any)
         run: |
