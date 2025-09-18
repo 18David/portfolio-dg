@@ -30,18 +30,26 @@
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
-              { "glob": "sitemap.xml", "input": "src", "output": "/" }
+              {
+                "glob": "sitemap.xml",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-                "includePaths": [
-                    "./node_modules"
-                ]
+              "includePaths": [
+                "./node_modules"
+              ]
             },
             "scripts": [],
-            "browser": "src/main.ts"
+            "browser": "src/main.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
