@@ -31,10 +31,10 @@ jobs:
         run: npm ci
 
       # IMPORTANT : base-href pour un "project page" (https://18david.github.io/portfolio-dg/)
-      - name: Build (production)
+      - name: Build (production + prerender)
         run: |
           npx ng build --configuration production --base-href /portfolio-dg/
-          npx ng prerender portfolio-dg
+          npx ng run portfolio-dg:prerender
 
       # SPA fallback : une copie de index.html en 404.html (utile si tu ajoutes d'autres routes)
       - name: Create 404.html

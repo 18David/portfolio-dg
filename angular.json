@@ -80,6 +80,17 @@
           },
           "defaultConfiguration": "development"
         },
+        "prerender": {
+          "builder": "@angular/build:prerender",
+          "options": {
+            "browserTarget": "portfolio-dg:build:production",
+            "routes": [
+              "/",
+              "/realisations",
+              "/contact"
+            ]
+          }
+        },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",
           "options": {
