@@ -4,11 +4,16 @@ import { ServerModule } from '@angular/platform-server';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ServerTranslateLoader } from './i18n/server-translate-loader';
 
 @NgModule({
   imports: [
-    AppModule,       // ton module racine existant
-    ServerModule     // ajoute le support SSR côté serveur
+    AppModule,
+    ServerModule,
+    TranslateModule.forRoot({
+      loader: { provide: TranslateLoader, useClass: ServerTranslateLoader }
+    })
   ],
   bootstrap: [AppComponent]
 })
