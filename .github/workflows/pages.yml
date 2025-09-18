@@ -48,7 +48,7 @@ jobs:
           ls -la dist/portfolio-dg/browser || true
 
       - name: Prerender (SSR static)
-        run: npx ng run portfolio-dg:prerender --verbose
+        run: npx ng run portfolio-dg:prerender
 
       - name: Show dist after prerender (debug)
         run: |
