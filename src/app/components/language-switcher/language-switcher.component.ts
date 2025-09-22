@@ -23,7 +23,7 @@ export class LanguageSwitcherComponent {
   langs: Array<{code:'fr'|'en'|'pt'; label:string}> = [
     { code: 'fr', label: 'Fr' },
     { code: 'en', label: 'En' },
-    { code: 'pt', label: 'Pt' }
+    /*{ code: 'pt', label: 'Pt' }*/
   ];
   current = this.langService.current;
   currentLabel = this.langs.find(l => l.code === this.current)?.label ?? '';
