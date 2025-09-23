@@ -12,13 +12,13 @@ const routes: Routes = [
       seo: {
         title: 'David Gonçalves | Développeur Full-Stack Angular & Unity/XR',
         description: 'Projets Angular/Node, Unity/XR, IoT & Home Assistant. Démos, réalisations et contact.',
-        image: 'https://dgportfolio.eu//assets/social/og-cover.jpg',
+        image: 'https://dgportfolio.eu/assets/social/og-cover.jpg',
         type: 'website',
         jsonLd: {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Accueil',
-          url: 'https://dgportfolio.eu//'
+          url: 'https://dgportfolio.eu/'
         }
       }
     }
@@ -30,7 +30,7 @@ const routes: Routes = [
       seo: {
         title: 'Réalisations — Projets Web, XR & IoT | David Gonçalves',
         description: 'Sélection de projets: Angular, Node.js, Unity/XR, ESPHome, Home Assistant, OBS.',
-        image: 'https://dgportfolio.eu//assets/social/og-realisations.jpg',
+        image: 'https://dgportfolio.eu/assets/social/og-realisations.jpg',
         type: 'website'
       }
     }
@@ -42,7 +42,7 @@ const routes: Routes = [
       seo: {
         title: 'Contact | David Gonçalves',
         description: 'Discutons de vos besoins en développement web (Angular/Node) ou XR (Unity).',
-        image: 'https://dgportfolio.eu//assets/social/og-contact.jpg',
+        image: 'https://dgportfolio.eu/assets/social/og-contact.jpg',
         type: 'website'
       }
     }
