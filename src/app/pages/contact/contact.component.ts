@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -11,11 +11,10 @@ import { isBrowser } from '../../utils/ssr-utils';
   selector: 'contact',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     TranslateModule
-  ],
+],
   templateUrl: './contact.component.html'
 })
 export class ContactComponent {

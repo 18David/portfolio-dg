@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LanguageSwitcherComponent } from '../components/language-switcher/language-switcher.component';
@@ -9,10 +9,9 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'header',
   imports: [
     RouterModule,
-    CommonModule,
     LanguageSwitcherComponent,
     TranslateModule
-  ],
+],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
