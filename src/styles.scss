@@ -7,6 +7,35 @@
 @use '@angular/material' as mat;
 @use './theme/_theme-colors.scss' as theme;
 
+.rounded-12xl {
+  border-radius: 3rem;
+}
+
+.w-sm
+{
+  width: 24rem;
+}
+.h-sm
+{
+  height: 24rem;
+}
+.w-md
+{
+  width: 28rem;
+}
+.w-lg
+{
+  width: 32rem;
+}
+.h-md
+{
+  height: 28rem;
+}
+.h-lg
+{
+  height: 32rem;
+}
+
 /* Style bouton mécanique */
 .mech-btn {
   position: relative;
@@ -14,28 +43,25 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.75rem;
+  @apply rounded-full border-2 border-black font-body font-bold px-8 py-4;
 
-  font: var(--mat-sys-body-medium);
   cursor: pointer;
   user-select: none;
 
   /* Bord 3D bas/droite */
-  box-shadow: 4px 4px 0 var(--mat-sys-primary);
+  box-shadow: 4px 4px 0 #000;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 
   /* Hover / Clic → touche enfoncée */
   &:hover,
   &:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--mat-sys-primary);
+    box-shadow: 2px 2px 0 #000;
   }
 
   &:active {
     transform: translate(3px, 3px);
-    box-shadow: 1px 1px 0 var(--mat-sys-primary);
+    box-shadow: 1px 1px 0 #000;
   }
 
   &:disabled,
@@ -45,7 +71,7 @@
     pointer-events: none;           /* plus de hover/clic */
     transition: none !important;    /* stop anim */
     transform: none !important;     /* pas d’enfoncement */
-    box-shadow: 4px 4px 0 var(--mat-sys-primary) !important; /* bord par défaut */
+    box-shadow: 4px 4px 0 #000 !important; /* bord par défaut */
     opacity: .55;                   /* grisé */
     filter: grayscale(60%) saturate(85%) brightness(95%);
   }
@@ -58,7 +84,7 @@
   &.disabled:active,
   &[aria-disabled="true"]:active {
     transform: none !important;
-    box-shadow: 4px 4px 0 var(--mat-sys-primary) !important;
+    box-shadow: 4px 4px 0 #000 !important;
   }
 }
 
@@ -85,7 +111,7 @@
 .mech-btn.pressed,
 .mech-btn[aria-pressed="true"] {
   transform: translate(3px, 3px);
-  box-shadow: 1px 1px 0 var(--mat-sys-primary);
+  box-shadow: 1px 1px 0 #000;
 }
 
 /* Empêche le hover/clic de remonter le bouton */
@@ -94,7 +120,7 @@
 .mech-btn[aria-pressed="true"]:hover,
 .mech-btn[aria-pressed="true"]:active {
   transform: translate(3px, 3px) !important;
-  box-shadow: 1px 1px 0 var(--mat-sys-primary) !important;
+  box-shadow: 1px 1px 0 #000 !important;
 }
 
 .mat-mdc-form-field.mech-select{
@@ -111,7 +137,7 @@
     user-select: none;
 
     /* Bord 3D bas/droite */
-    box-shadow: 4px 4px 0 var(--mat-sys-primary);
+    box-shadow: 4px 4px 0 #000;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 
     .mat-mdc-form-field-flex{
@@ -140,12 +166,12 @@
   &:hover .mat-mdc-text-field-wrapper,
   &:active .mat-mdc-text-field-wrapper{
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--mat-sys-primary);
+    box-shadow: 2px 2px 0 #000;
   }
 
   &:active .mat-mdc-text-field-wrapper{
     transform: translate(3px, 3px);
-    box-shadow: 1px 1px 0 var(--mat-sys-primary);
+    box-shadow: 1px 1px 0 #000;
   }
 }
 

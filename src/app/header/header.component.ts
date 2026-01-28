@@ -1,15 +1,14 @@
 
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LanguageSwitcherComponent } from '../components/language-switcher/language-switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { isBrowser } from '../ssr';
 
 
 @Component({
   selector: 'header',
   imports: [
     RouterModule,
-    LanguageSwitcherComponent,
     TranslateModule
 ],
   templateUrl: './header.component.html',
@@ -21,4 +20,19 @@ export class HeaderComponent {
     { key: 'projects', path: '/realisations', exact: false },
     { key: 'contact', path: '/contact', exact: false }
   ];
+  private isBrowser = isBrowser();
+  private clickSound: HTMLAudioElement | null = null;
+
+  constructor() {
+    if (this.isBrowser) {
+      this.clickSound = new Audio('/assets/sounds/click.mp3');
+    }
+  }
+
+  playClickSound() {
+    if (this.clickSound) {
+      this.clickSound.currentTime = 0;
+      this.clickSound.play().catch(() => {});
+    }
+  }
 }

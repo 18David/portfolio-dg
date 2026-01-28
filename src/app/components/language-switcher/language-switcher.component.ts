@@ -20,10 +20,9 @@ import { isBrowser } from 'src/app/utils/ssr-utils';
   ]
 })
 export class LanguageSwitcherComponent {
-  langs: Array<{code:'fr'|'en'|'pt'; label:string}> = [
+  langs: Array<{code:'fr'|'en'; label:string}> = [
     { code: 'fr', label: 'Fr' },
-    { code: 'en', label: 'En' },
-    /*{ code: 'pt', label: 'Pt' }*/
+    { code: 'en', label: 'En' }
   ];
   current = this.langService.current;
   currentLabel = this.langs.find(l => l.code === this.current)?.label ?? '';
@@ -38,7 +37,7 @@ export class LanguageSwitcherComponent {
     }
   }
 
-  async set(lang: 'fr'|'en'|'pt') {
+  async set(lang: 'fr'|'en') {
     if(this.current==lang) return;
     this.playClickSound()
     await this.langService.setLanguage(lang);

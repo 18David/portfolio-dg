@@ -34,6 +34,11 @@ export class HomeComponent {
         window.location.href = `/realisations?tag=${routeArg}`;
       }, 200);
     }
+    else if (this.isBrowser) {
+      setTimeout(() => {
+        window.location.href = `/realisations`;
+      }, 200);
+    }
   }
 
 }
