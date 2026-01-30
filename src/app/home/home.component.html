@@ -6,11 +6,15 @@
     <div
     class="w-full flex-row flex items-center justify-center"
     >
-      <div class="md:my-12 w-sm h-sm md:w-md md:h-md bg-accent rounded-12xl rotate-45 flex flex-col items-center justify-center">
+      <div 
+      class="my-8 md:my-12 w-xs h-xs md:w-md md:h-md bg-accent rounded-12xl rotate-45 
+      flex flex-col items-center justify-center border-2 border-black"
+      style="box-shadow: 25px 25px 50px -12px rgb(0 0 0 / 0.25);">
         <img
         src="/assets/images/pp.jpg"
         alt="Profil Picture"
-        class="object-cover w-48 h-48 md:w-64 md:h-64 rounded-12xl -rotate-45"
+        class="object-cover w-48 h-48 md:w-64 md:h-64 rounded-12xl -rotate-45 
+        border-2 border-black"
         />
 
       </div>
@@ -21,7 +25,7 @@
     <div class="font-body text-primary text-xl md:text-3xl text-center">
       {{ 'home.roles.fullstack.title' | translate }} &amp; {{ 'home.roles.unity.title' | translate }} 
     </div>
-    <div class="flex flex-row gap-8 justify-center items-center text-lg">
+    <div class="flex flex-wrap gap-8 justify-center items-center text-lg">
       <div class="bg-accent/30 px-4 py-2 rounded-full">{{ 'home.roles.fullstack.tech_1' | translate }}</div>
       <div class="bg-accent/30 px-4 py-2 rounded-full">{{ 'home.roles.fullstack.tech_2' | translate }}</div>
       <div class="bg-accent/30 px-4 py-2 rounded-full">{{ 'home.roles.unity.tech_1' | translate }}</div>
@@ -55,49 +59,49 @@
 </div>
 <!-- Section présentation de mes passions-->
 <div
-  class="h-auto w-full bg-primary text-secondary flex flex-col md:flex-row  gap-24 md:items-center justify-start md:justify-between p-12 md:p-24"
+  class="h-auto w-full bg-primary text-secondary flex flex-col gap-24 md:items-center justify-start md:justify-between p-12 md:p-24"
 >
-  <div class="flex flex-col gap-24">
-    <div
-      class="font-title text-4xl md:text-5xl capitalize w-full md:w-1/2 relative flex md:flex-row flex-col items-center justify-start gap-12"
-    >
-      <div class="w-full">
-        {{ 'home.passions.title' | translate }}
-      </div>
-      <!--class="absolute top-0 right-24 md:right-0 translate-x-full -translate-y-1/4"-->
-      <svg
-        width="100"
-        height="100"
-        viewBox="0 0 300 300"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M100 100C100 73.4783 110.536 48.043 129.289 29.2893C148.043 10.5357 173.478 6.20024e-06 200 6.51651e-06C226.522 6.83278e-06 251.957 10.5357 270.711 29.2893C289.464 48.043 300 73.4783 300 100L200 100L100 100Z"
-          fill="var(--mat-sys-tertiary-container)"
-          stroke="var(--mat-sys-tertiary-container)"
-          stroke-width="1"
-        />
-        <path
-          d="M100 300C73.4783 300 48.043 289.464 29.2893 270.711C10.5357 251.957 3.51108e-06 226.522 1.19249e-06 200C-1.12611e-06 173.478 10.5357 148.043 29.2893 129.289C48.0429 110.536 73.4783 100 100 100L100 200L100 300Z"
-          fill="var(--mat-sys-tertiary-container)"
-          stroke="var(--mat-sys-tertiary-container)"
-          stroke-width="1"
-        />
-        <path
-          d="M300 100L100 300H300V100Z"
-          fill="var(--mat-sys-tertiary-container)"
-          stroke="var(--mat-sys-tertiary-container)"
-          stroke-width="1"
-        />
-        <path
-          d="M100 300L300 100L100 100L100 300Z"
-          fill="var(--mat-sys-secondary-container)"
-          stroke="var(--mat-sys-secondary-container)"
-          stroke-width="1"
-        />
-      </svg>
+  <div
+  class="w-full relative flex md:flex-row flex-col items-center justify-start gap-12"
+  >
+    <div class="font-title text-4xl md:text-8xl font-bold capitalize w-full">
+      {{ 'home.passions.title' | translate }}
     </div>
+    <!--class="absolute top-0 right-24 md:right-0 translate-x-full -translate-y-1/4"-->
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 300 300"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M100 100C100 73.4783 110.536 48.043 129.289 29.2893C148.043 10.5357 173.478 6.20024e-06 200 6.51651e-06C226.522 6.83278e-06 251.957 10.5357 270.711 29.2893C289.464 48.043 300 73.4783 300 100L200 100L100 100Z"
+        fill="var(--mat-sys-tertiary-container)"
+        stroke="var(--mat-sys-tertiary-container)"
+        stroke-width="1"
+      />
+      <path
+        d="M100 300C73.4783 300 48.043 289.464 29.2893 270.711C10.5357 251.957 3.51108e-06 226.522 1.19249e-06 200C-1.12611e-06 173.478 10.5357 148.043 29.2893 129.289C48.0429 110.536 73.4783 100 100 100L100 200L100 300Z"
+        fill="var(--mat-sys-tertiary-container)"
+        stroke="var(--mat-sys-tertiary-container)"
+        stroke-width="1"
+      />
+      <path
+        d="M300 100L100 300H300V100Z"
+        fill="var(--mat-sys-tertiary-container)"
+        stroke="var(--mat-sys-tertiary-container)"
+        stroke-width="1"
+      />
+      <path
+        d="M100 300L300 100L100 100L100 300Z"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+      />
+    </svg>
+  </div>
+  <div class="flex flex-col md:flex-row gap-24">
     <div class="flex flex-col md:flex-row md:justify-between w-full gap-24">
       <div class="flex flex-col gap-24">
         <div class="max-w-4xl pl-4 md:pl-24">
@@ -120,32 +124,32 @@
       </div>
     </div>
 
-  </div>
-  <div
-    class="relative w-auto md:max-w-1/3 md:min-w-80 h-auto aspect-[9/16] overflow-hidden shadow-lg triple-slices rounded-full"
-  >
-    <!-- Image 3 - fond -->
-    <img
-      src="/assets/images/vr.jpg"
-      alt="image 3"
-      class="absolute inset-0 w-full h-full object-cover bg filter brightness-95 contrast-125 saturate-125 -hue-rotate-15 transition-all"
-    />
-    <!-- Image 2 -->
-    <div class="absolute inset-0 clip-path-second">
+    <div
+      class="relative w-auto md:max-w-1/3 md:min-w-80 h-auto aspect-[9/16] overflow-hidden shadow-lg triple-slices rounded-full"
+    >
+      <!-- Image 3 - fond -->
       <img
-        src="/assets/images/hockey.jpg"
-        alt="image 2"
-        class="w-full h-full object-cover filter brightness-95 contrast-125 saturate-125 hue-rotate-15 transition-all"
+        src="/assets/images/vr.jpg"
+        alt="image 3"
+        class="absolute inset-0 w-full h-full object-cover bg filter brightness-95 contrast-125 saturate-125 -hue-rotate-15 transition-all"
       />
+      <!-- Image 2 -->
+      <div class="absolute inset-0 clip-path-second">
+        <img
+          src="/assets/images/hockey.jpg"
+          alt="image 2"
+          class="w-full h-full object-cover filter brightness-95 contrast-125 saturate-125 hue-rotate-15 transition-all"
+        />
+      </div>
+      <!-- Image 1 -->
+      <div class="absolute inset-0 clip-path-first">
+        <img
+          src="/assets/images/game.png"
+          alt="image 1"
+          class="w-full h-full object-cover filter brightness-100 contrast-100 saturate-125  transition-all"
+        />
+      </div>
+      <div class="pointer-events-none absolute inset-0 mix-blend-multiply bg-accent/10"></div>
     </div>
-    <!-- Image 1 -->
-    <div class="absolute inset-0 clip-path-first">
-      <img
-        src="/assets/images/game.png"
-        alt="image 1"
-        class="w-full h-full object-cover filter brightness-100 contrast-100 saturate-125  transition-all"
-      />
-    </div>
-    <div class="pointer-events-none absolute inset-0 mix-blend-multiply bg-accent/10"></div>
   </div>
 </div>
