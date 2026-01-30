@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Project } from '../../models/project.model';
-import { CommonModule, DatePipe, NgClass } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import {SafeUrlPipe} from '../../pipes/safe-url.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { isBrowser } from '../../utils/ssr-utils';
@@ -12,7 +12,6 @@ import { isBrowser } from '../../utils/ssr-utils';
     DatePipe,
     SafeUrlPipe,
     TranslateModule,
-    NgClass,
     CommonModule
 ],
   standalone: true,
