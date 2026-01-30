@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Project } from '../../models/project.model';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, NgClass } from '@angular/common';
 import {SafeUrlPipe} from '../../pipes/safe-url.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { isBrowser } from '../../utils/ssr-utils';
@@ -11,17 +11,21 @@ import { isBrowser } from '../../utils/ssr-utils';
   imports: [
     DatePipe,
     SafeUrlPipe,
-    TranslateModule
-  ],
+    TranslateModule,
+    NgClass,
+    CommonModule
+],
   standalone: true,
   styleUrls: ['./project-card.component.scss']
 })
 export class ProjectCardComponent implements OnInit, OnDestroy {
   @Input() project!: Project;
   showDetails = false;
+  btnAnimating = false;
 
   private readonly browser = isBrowser();
   private clickSound: HTMLAudioElement | null = null;
+  private btnAnimTimer: ReturnType<typeof setTimeout> | null = null;
 
   current = 0;
   progress = 0;                // 0..1 for current segment
@@ -48,6 +52,16 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
   toggleDetails() {
     this.playClickSound();
     this.showDetails = !this.showDetails;
+    this.btnAnimating = false;
+    if (this.btnAnimTimer) {
+      clearTimeout(this.btnAnimTimer);
+      this.btnAnimTimer = null;
+    }
+    this.btnAnimating = true;
+    this.btnAnimTimer = setTimeout(() => {
+      this.btnAnimating = false;
+      this.btnAnimTimer = null;
+    }, 240);
   }
 
   ngOnInit() {
@@ -56,6 +70,10 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.stop();
+    if (this.btnAnimTimer) {
+      clearTimeout(this.btnAnimTimer);
+      this.btnAnimTimer = null;
+    }
   }
 
   // ------- Carousel control -------

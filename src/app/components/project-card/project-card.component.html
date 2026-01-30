@@ -1,5 +1,6 @@
 <div
-  class="bg-secondary rounded-2xl shadow-md overflow-hidden flex flex-col h-full"
+  class="bg-secondary rounded-2xl shadow-md overflow-hidden flex flex-col h-content"
+  [class.animate-card-pop]="btnAnimating"
 >
   <!-- Media -->
   <!--div class="w-full h-56 bg-primary relative overflow-hidden border border-2 border-b-0 rounded-t-2xl border-accent">
@@ -101,22 +102,22 @@
   </h3>
 
   <!-- Infos -->
-  <div class="p-4 flex flex-col gap-2 flex-1">
+  <div class="p-4 flex flex-col items-center gap-8 flex-1">
     <p class="font-body text-sm text-primary flex-1">
       {{ ('projects.' + project.id + '.short') | translate }}
     </p>
 
     <div class="flex flex-wrap gap-2 mt-2">
       @for (keyword of project.keywords; track keyword) {
-      <span class="px-2 py-1 rounded-full text-xs bg-accent/30 text-primary">
+      <span class="px-4 py-2 rounded-full text-xs bg-accent/30 text-primary">
         {{ ('projects.keywords.' + keyword) | translate: { def: keyword } }}
       </span>
       }
     </div>
-    <button class="mech-btn primary" (click)="toggleDetails()">
+    <button class="mech-btn primary w-content" (click)="toggleDetails()">
       @if (!showDetails) { {{ 'projects.cta.more' | translate }} } @else { {{ 'projects.cta.less' | translate }} }
     </button>
-    <div class="details-wrap" [class.open]="showDetails" aria-hidden="{{!showDetails}}">
+    <div class="details-wrap grid" [class.open]="showDetails" aria-hidden="{{!showDetails}}">
       <div class="details mt-3 text-xs text-primary space-y-1">
         <p>{{ 'labels.year' | translate }} : {{ project.date | date : "yyyy" }}</p>
         @if (project.duration) { <p>{{ 'labels.duration' | translate }} : {{ project.duration }}</p> }

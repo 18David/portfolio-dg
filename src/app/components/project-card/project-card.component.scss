@@ -1,6 +1,5 @@
 /* Conteneur animé par la grille : 0fr (fermé) -> 1fr (ouvert) */
 .details-wrap {
-  display: grid;
   grid-template-rows: 0fr;                   /* fermé */
   transition:
     grid-template-rows .4s cubic-bezier(0.22,1,0.36,1),
