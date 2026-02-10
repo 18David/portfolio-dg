@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { isBrowser } from '../ssr';
 
@@ -22,8 +22,8 @@ export class HeaderComponent {
   ];
   private isBrowser = isBrowser();
   private clickSound: HTMLAudioElement | null = null;
+  constructor(public router: Router) {
 
-  constructor() {
     if (this.isBrowser) {
       this.clickSound = new Audio('/assets/sounds/click.mp3');
     }
@@ -34,5 +34,14 @@ export class HeaderComponent {
       this.clickSound.currentTime = 0;
       this.clickSound.play().catch(() => {});
     }
+  }
+
+  isLinkActive(path: string, exact: boolean) {
+    return this.router.isActive(path, {
+      paths: exact ? 'exact' : 'subset',
+      queryParams: 'ignored',
+      fragment: 'ignored',
+      matrixParams: 'ignored'
+    });
   }
 }

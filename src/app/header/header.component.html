@@ -7,8 +7,9 @@
         [routerLink]="link.path"
         [routerLinkActiveOptions]="{ exact: link.exact }"
         routerLinkActive="primary"
-        class="mech-btn h-min"
-        (click)="playClickSound()"
+        class="mech-btn secondary h-min"
+        [class.pressed]="isLinkActive(link.path, link.exact)"
+        (click)="(!isLinkActive(link.path, link.exact))?playClickSound():null"
       >
         {{ ('nav.' + link.key) | translate }}
       </a>
